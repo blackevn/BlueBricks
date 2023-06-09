@@ -1,7 +1,7 @@
 "use client"
 
 import {useContext, createContext } from "react";
-import { IProps, Side, ContextData } from "@/types/interfaces";
+import { IProps, ContextData } from "@/types/interfaces";
 import { useToggle, useHeight, useWidth } from "../hooks";
 
 
