@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.authInput {
+    @apply input input-md outline-none border-0 focus:bg-backgroundPrimary
+}
+
+.toastCustom{
+    @apply z-[99999] flex px-4 rounded-full gap-4 items-center 
+           justify-between py-2
+    
+}

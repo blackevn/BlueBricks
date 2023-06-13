@@ -3,7 +3,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useGeneralContext } from "../context/AppContext"
 import { InputProps } from "@/types/interfaces"
-import { faIcons } from "@fortawesome/free-solid-svg-icons"
+import { faAt, faIcons } from "@fortawesome/free-solid-svg-icons"
 
 const Input: React.FC<InputProps> = (props) => {
 
@@ -15,43 +15,36 @@ const Input: React.FC<InputProps> = (props) => {
            id, 
            onChange, 
            placeholder = "Input", 
-           textColor =  "text-gray-600", 
+           textColor = "text-gray-600", 
            modifier, 
            ref, 
            disabled, 
            hidden, 
            onFocus,
-           icon = faIcons} = props
+           icon: Icon,
+           iconModifier, onClick } = props
 
   return (
 
     <>
 
-		<input
-    
-    disabled={disabled}
-
-      ref={ref}
-      className={`
-       outline-0
-       border-0
-       p-1.5
-       px-2
-       ${textColor}
-       ${modifier}
-       ${ height > 800 ? "md:input-md" : "input-sm"}
-
-       `}
-
-        type={type}
+    <div className="form-control relative w-full">
+        <input
+        hidden={hidden}
+        ref={ref}
+        onFocus={onFocus}
+        disabled={disabled} 
         name={name}
         value={value}
-        id={id}
         onChange={onChange}
-        onFocus={onFocus}
-        placeholder={placeholder}
-        hidden={hidden}
-        />
+        type={type}
+        className={`${modifier}`} 
+        placeholder={placeholder} />
+
+        <span className="absolute inset-y-0 right-4 inline-flex items-center">
+          <Icon onClick={onClick} className={`${iconModifier}`} />
+        </span>
+      </div>
 
       
       

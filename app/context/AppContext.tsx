@@ -1,8 +1,8 @@
-"use client"
 
 import {useContext, createContext } from "react";
 import { IProps, ContextData } from "@/types/interfaces";
 import { useToggle, useHeight, useWidth } from "../hooks";
+import { getCurrentUser } from "../actions";
 
 
 const GeneralContext = createContext<ContextData>({   
@@ -17,7 +17,7 @@ export const GeneralAppContext = ({ children }: IProps) => {
     const [ height ] = useHeight()
     const [ width ] = useWidth()
 
-  return <GeneralContext.Provider value={{height,  width}}>
+  return <GeneralContext.Provider value={{ height,  width }}>
 
             {children}
 

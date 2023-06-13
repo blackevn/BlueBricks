@@ -1,37 +1,38 @@
 'use client'
 
-import { useLinks, useToggle, useVariants } from "@/app/hooks"
-import { Categories } from "@/types/interfaces"
+import { useLinks, useToggle, useVariants, useWidth } from "@/app/hooks"
 import FilterItem from "./filterItem"
 import Button from "../button"
-import { faEllipsisH, faSearch, faXmark } from "@fortawesome/free-solid-svg-icons"
-import { motion, useAnimationControls } from "framer-motion"
-import { useEffect } from "react"
+import { FiSearch} from 'react-icons/fi'
+import { IoClose } from 'react-icons/io5'
+import { HiArchive, HiAdjustments } from 'react-icons/hi'
+import { motion } from "framer-motion"
 import Input from "../input"
+import { useSearchParams } from "next/navigation"
+
 
 const FilterNav: React.FC = () => {
 
   const { categories } = useLinks()
+  
+  const [ width ]  = useWidth()
   const { filterNavVariants } = useVariants()
-  const filterNavController = useAnimationControls()
-  const [ toggleSearch, handleToggleSearch ] = useToggle(false)
-  const [ toggleSearchPanel, handleToggleSearchPanel ] = useToggle(false)
-  
-  useEffect(() => {
+  const [ toggleSearch, handleToggleSearch, setSearch ] = useToggle(false)
+  const [ toggleSearchPanel, handleToggleSearchPanel, setSearchPanel ] = useToggle(false)
+  const [ categoriesToggle, handleCatergories, setCatergories ] = useToggle(false)
+  const param = useSearchParams()
+  const category = param?.get('category')
 
-    filterNavController.start('show')
-
-  }, [toggleSearch])
+  console.log(category);
   
-    useEffect(() => {
-  
-      filterNavController.start('hidden')
-  
-    }, [!toggleSearch])
 
     const closeSearch = () => {
-        handleToggleSearchPanel()
-        handleToggleSearch()
+        setSearch(false)
+        setSearchPanel(false)
+    }
+
+    const closeCatogories = () => {
+        setCatergories(false)
     }
 
   
@@ -41,49 +42,89 @@ const FilterNav: React.FC = () => {
                 variants={filterNavVariants}
                 animate='show'
                 initial='hidden'    
-                className="absolute z-10 h-full left-0 bg-backgroundPrimary w-full flex flex-col gap-2 px-4 lg:px-10">
-                       <div className='flex w-full'>
-
+                className="absolute z-10 h-full left-0 bg-backgroundPrimary w-full flex gap-2 px-4 lg:px-10 items-center">
+                       <div className='flex w-full items-center'>
                         <Input
                         type="search"
                         onFocus={handleToggleSearchPanel}
                         value=""
                         name=""
-                        modifier="h-full w-full text-[2em] bg-backgroundPrimary outline-none"
+                        modifier="h-full w-full text-[1rem] lg:text-[1.2rem] bg-backgroundPrimary outline-none"
                         placeholder="Search..."
+                        iconModifier=" text-[1rem] lg:text-[1.2rem]"
+                        icon={FiSearch}
                         />
                         <Button 
                         text=''
-                        modifier="h-full text-[2em] lg:p-8"
+                        modifier="h-full text-[1rem] lg:text-[1.2rem] lg:p-8"
                         clickEvent={closeSearch}
-                        icon={faXmark}/>
+                        icon={IoClose}/>
                        </div>
-                        {toggleSearchPanel && <div className="w-full min-h-[500px] bg-white">
-
-                        </div>}
+                       
                 </motion.div>}
-                <div className="flex gap-2 lg:gap-6 overflow-x-scroll w-[70%] lg:w-full">
-                    { categories.map(item => (<FilterItem
+
+              {width >= 700 || categoriesToggle && <motion.div 
+                variants={filterNavVariants}
+                animate='show'
+                initial='hidden'    
+                className="absolute z-10 h-full left-0 bg-backgroundPrimary w-full flex gap-2 px-4 lg:px-10 items-center">
+                    <div className='flex gap-2 lg:gap-6 overflow-x-scroll item-center'>
+                     { categories.map(item => (<FilterItem
+                                              key={item.id}
                                               id={item.id}
-                                              href={item.link}
                                               icon={item.icon}
                                               name={item.name}
+                                              selected={category === item.name}
                                               />))}
-                </div>
+
+                    </div>
+                    <Button
+                    clickEvent={closeCatogories}
+                    modifier="h-full text-[1rem] lg:text-[1.2rem] lg:p-6"
+                    icon={IoClose}
+                    text=""
+                    />
+                </motion.div>}
+
+              { width >= 700 ?  <div className="flex gap-2 lg:gap-6 overflow-x-scroll w-[70%] lg:w-full">
+                    { categories.map(item => (<FilterItem
+                                              key={item.id}
+                                              id={item.id}
+                                              icon={item.icon}
+                                              name={item.name}
+                                              selected={category === item.name}
+                                              />))}
+                </div> : 
+
+                <Button
+                modifier="border lg:p-6 text-[1rem] lg:text-[1.2rem]"
+                text="Categories"
+                clickEvent={handleCatergories}
+                icon={HiArchive}
+                />
+                }
                 <div className="gap-2 md:gap-4 lg:gap-8 flex">
                 <Button
-                 icon={faEllipsisH}
+                 icon={HiAdjustments}
                  text="Filter"
-                 modifier="lg:p-8 border"
+                 modifier="lg:p-6 border text-[1rem] lg:text-[1.2rem]"
                 />
                 <Button
-                icon={faSearch}
-                modifier="rounded-full lg:p-8 border"
+                icon={FiSearch}
+                modifier="rounded-full lg:p-6 border text-[1rem] lg:text-[1.2rem]"
                 text=""
                 clickEvent={handleToggleSearch}
                 />
                 </div>
             </div>
+
+                 {toggleSearchPanel && <div className="w-full min-h-[500px] bg-backgroundPrimary fixed grid place-items-center">
+                        <div className="grid place-items-center gap-8">
+                            <IoClose className="text-[1.5em] lg:text-[2em]"/>
+                        <h1>No recent searches</h1>
+                        </div>
+                
+                        </div>}
         </>  
 }
 

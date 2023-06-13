@@ -1,7 +1,9 @@
 import '../styles/globals.css'
 import { Montserrat } from 'next/font/google'
-import { Nav } from './components'
+import { Nav, ToasterWrap } from './components'
 import FilterNav from './components/Nav/filterNav'
+import { getCurrentUser } from './actions' 
+import { User } from '@prisma/client'
 
 const inter = Montserrat({ subsets: ['latin'] })
 
@@ -10,15 +12,20 @@ export const metadata = {
   description: 'Real estate booking app.',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+  const currentUser = await getCurrentUser()
+
   return (
+    
     <html lang="en">
-            <body className={`${inter.className}box-border`}>
-              <Nav/>
+            <body className={`${inter.className} box-border`}>
+          <ToasterWrap/> 
+              <Nav currentUser={currentUser}/>
               <FilterNav/>
               {children}
             </body>

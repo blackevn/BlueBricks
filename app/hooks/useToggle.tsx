@@ -14,7 +14,7 @@ const useToggle = ( initialValue:boolean = false ) => {
 
   }
 
-  return [ toggle, handleToggle ]
+  return [ toggle, handleToggle, setToggle ]
 
 }
 

@@ -23,7 +23,7 @@ const Toast: React.FC<ToastProps> = ({ modifier, children, text, icon = faIcons,
                  >
 
                   <div
-                  className={` ${modifier} toastCustom`}
+                  className={` ${modifier} toastCustom `}
                   >
 
                   <div className="flex gap-4 items-center">

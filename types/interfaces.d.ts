@@ -2,6 +2,7 @@ import { Toggle } from '@/app/components';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { type } from 'os';
 import { FormEventHandler, ReactNode } from 'react';
+import { IconBaseProps, IconType } from 'react-icons';
 
 type FunctionHandler = () => void;
 
@@ -59,7 +60,9 @@ export type InputProps = {
   ref?: string
   disabled?: boolean
   hidden?: boolean
-  icon?: IconDefinition
+  icon: IconType
+  iconModifier?: string
+  onClick?: ClickEvent
 }
 
 
@@ -70,7 +73,7 @@ export type ButtonProps = {
   bgColor?: string
   clickEvent?:  ClickEvent
   borderColor?: string 
-  icon?: IconDefinition
+  icon: IconType
   borderSize?: string 
   paddingX?: string
   paddingY?: string
@@ -110,31 +113,23 @@ export interface ContextData {
 
     id: number
     name: string
-    icon: IconDefinition
+    icon: IconType 
     link?: string
 
   }
 
   
   export interface IUser {
-    id?: string;
-    name?: string | null | SetStateAction<string>
-    userName?: string | SetStateAction<string>
-    image?: string;
-    bio?: string | SetStateAction<string>
-    email: string;
-    verifiedEmail: string
-    image: string
-    coverImage: string | SetStateAction<string>
-    profileImage: string | SetStateAction<string>
-    hashedPassword: string;
-    createAt: string;
+    createdAt: string;
     updatedAt: string;
-    followingId: string;
-    hasNotification: boolean
-    bg?: string
-    filter?: any
-    length?: any
-    map?: any
+    emailVerified: string | null;
+    id: string;
+    name: string | null;
+    email: string | null;
+    image: string | null;
+    hashedPassword: string | null;
+    favoriteIds: string[];
+  
   }
+
 

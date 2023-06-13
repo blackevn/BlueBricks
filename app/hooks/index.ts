@@ -4,8 +4,9 @@ import useWidth from "./useWidth";
 import useToggle from "./useToggle";
 import useVariants from "./useVariants";
 import useLinks from "./useLinks";
+import useAuthForm from "./useAuthForm";
 
 export {
     useDarkMode, useVariants, useHeight, 
-    useWidth, useToggle, useLinks
+    useWidth, useToggle, useLinks, useAuthForm
 }

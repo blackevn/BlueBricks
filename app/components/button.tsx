@@ -1,9 +1,8 @@
 'use client'
 
-import { faIcons } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useGeneralContext } from "../context/AppContext"
 import { ButtonProps } from "@/types/interfaces";
+import { FaIcons } from "react-icons/fa"
 
 const Button: React.FC<ButtonProps> = (props) => {
 
@@ -19,7 +18,7 @@ const Button: React.FC<ButtonProps> = (props) => {
            bgColor, 
            clickEvent, 
            borderColor, 
-           icon = faIcons, 
+           icon: Icon = FaIcons, 
            children,
            modifier,
            tip,
@@ -57,7 +56,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
      data-tip={tip}
     
-   ><FontAwesomeIcon icon={icon}/>
+          ><Icon/>
           
             {text}
             {children}

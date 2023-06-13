@@ -3,20 +3,28 @@ import Avatar from "./avatar";
 import { IProps, IUser } from "@/types/interfaces";
 
 interface UserDropdownProps {
-  children: JSX.Element[]
+  children: JSX.Element[] | JSX.Element
   currentUser?: IUser;
+  modifier?: string
 }
 
-const UserDropdown: React.FC<UserDropdownProps> = ({currentUser, children}) => {
+const UserDropdown: React.FC<UserDropdownProps> = ({currentUser, children, modifier}) => {
 
-  return <div className="dropdown dropdown-end dropdown-hover">
-            <label tabIndex={0} className=""> <Avatar src={currentUser?.profileImage}/></label>
-            <div tabIndex={0} className="dropdown-content card card-compact shadow bg-opacity-25 bg-gray-400 backdrop-blur-2xl min-w-[300px] p-2 rounded-2xl">
-                <div className="card-body">
-                  { children }
-                </div>
+  return <>
+            <div className="dropdown">
+            <label className="mb-4" tabIndex={0}> 
+            <Avatar 
+            width="m-1 w-8 h-8 lg:w-10 lg:h-10" 
+            src={currentUser?.image}/> 
+            </label>
+            <div 
+            className={`dropdown-menu dropdown-menu-bottom-left my-2 
+            ${modifier}`}>
+             {children}
             </div>
             </div>
+        </> 
+           
 };
 
 export default UserDropdown;

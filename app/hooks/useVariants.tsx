@@ -8,18 +8,20 @@ const useVariants = () => {
     const filterNavVariants = {
         hidden: {
             x: '-200vw',
+            opacity: 0,
             transition: {
                 ease: 'easeOut',
-                delay: 0.3
+                duration: 0.3
                 
             }
         },
 
         show: {
             x: 0,
+            opacity: 1,
             transition: {
                 ease: 'easeIn',
-                delay: 0.3
+                duration: 0.3
             }
         }
     }
@@ -28,7 +30,7 @@ const useVariants = () => {
     const toastVariants = {
         hidden: {
             opacity: 0,
-            y: -500,
+           
             transition: {
                 ease: 'easeIn'
             }
@@ -36,7 +38,7 @@ const useVariants = () => {
 
         show: {
             opacity: 1,
-            y: 0,
+           
             transition: {
                 stiffness: 100,
                 damping: 24
