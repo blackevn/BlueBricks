@@ -7,7 +7,7 @@ import Modal from "../Modal/modal";
 import AuthForm from "../Forms/AuthForm";
 import { IUser } from "@/types/interfaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useLinks } from "@/app/hooks";
+import { useLinks, useToggle } from "@/app/hooks";
 import { signOut } from "next-auth/react";
 import { FaArrowCircleRight } from "react-icons/fa";
 
@@ -18,6 +18,7 @@ interface NavbarProps {
 const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
 
   const { menuItems } = useLinks()
+  const [ toggleModal, handleToggleModal, setToggleModal ] = useToggle(false)
 
     return <>
             <nav className="w-screen flex justify-between items-center box-border">
@@ -51,11 +52,15 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
                  label="Login"
                  modifier=""
                  icon={FaArrowCircleRight}
+                 modal={'modal-1'}
+                 toggle={toggleModal}
                  >
                     <AuthForm/>
                  </Modal>
                 }
                 </div>
+
+              
             </nav>
            </>
 

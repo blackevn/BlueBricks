@@ -1,7 +1,5 @@
 'use client'
 
-import { IconDefinition, faIcons } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconType } from "react-icons";
 
 type ModalProps = {
@@ -10,22 +8,23 @@ type ModalProps = {
     modifier?: string
     label?: string
     icon: IconType
-
+    modal?: string
+    toggle?: boolean
 }
 
-const Modal: React.FC<ModalProps> = ({children, modifier, label, icon: Icon}) => {
+const Modal: React.FC<ModalProps> = ({children, modifier, label, icon: Icon, modal, toggle}) => {
 
 return <>
-      <label className={`flex ${modifier} space-x-2 p-0 items-center`} htmlFor="modal-1"> 
+      <label className={`flex ${modifier} space-x-2 p-0 items-center`} htmlFor={`${toggle && modal}`}> 
 
       <Icon/>
       <span>{label}</span>
       </label>
-        <input className="modal-state" id="modal-1" type="checkbox" />
+        <input className="modal-state" id={`${toggle && modal}`} type="checkbox" />
         <div className="modal">
-            <label className="modal-overlay" htmlFor="modal-1"></label>
+            <label className="modal-overlay" htmlFor={`${ toggle && modal}`}></label>
             <div className="modal-content flex flex-col gap-5">
-                <label htmlFor="modal-1" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
+                <label htmlFor={`${toggle && modal}`} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
                <div>{children}</div>
             </div>
         </div>

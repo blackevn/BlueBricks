@@ -1,7 +1,11 @@
 import { Categories, NavigationLinks } from "@/types/interfaces";
 import { faIcons } from "@fortawesome/free-solid-svg-icons";
-import { GiBeachBucket, GiWindmill } from 'react-icons/gi'
-import { HiHomeModern } from 'react-icons/hi2'
+import { GiWindmill, GiIsland, GiBoatFishing, GiCastle, GiCaveEntrance, GiForestCamp, GiCactus, GiBarn } from 'react-icons/gi'
+import { TbBeach, TbMountain, TbPool } from 'react-icons/tb'
+import { MdOutlineVilla } from 'react-icons/md'
+import { FaSkiing } from 'react-icons/fa'
+import { BsSnow } from 'react-icons/bs'
+import { IoDiamond } from 'react-icons/io5'
 
 const useLinks = () => {
 
@@ -42,57 +46,99 @@ const useLinks = () => {
 
     const categories: Categories[] = [
 
-        {
-            id: 1,
-            icon: GiBeachBucket,
-            name: 'Beach',
-            link: 'Link' 
-        },
-        {
-            id: 2,
-            icon: HiHomeModern,
-            name: 'Modern',
-            link: 'Link' 
-        },
-        {
-            id: 3,
-            icon: GiWindmill,
-            name: 'Category',
-            link: 'Link' 
-        },
-        {
-            id: 4,
-            icon: GiWindmill,
-            name: 'Windmill',
-            link: 'Link' 
-        },
-        {
-            id: 5,
-            icon: GiWindmill,
-            name: 'Category',
-            link: 'Link' 
-        },
-        {
-            id: 6,
-            icon: GiWindmill,
-            name: 'Category',
-            link: 'Link' 
-        },
-        {
-            id: 7,
-            icon: GiWindmill,
-            name: 'Category',
-            link: 'Link' 
-        },
-        {
-            id: 8,
-            icon: GiWindmill,
-            name: 'Category',
-            link: 'Link' 
-        },
-       
-    ]
-
+    
+            { 
+              id: 1, 
+              name: 'Beach',
+              icon: TbBeach,
+              description: 'This property is close to the beach!',
+            },
+            { 
+              id: 1,
+              name: 'Windmills',
+              icon: GiWindmill,
+              description: 'This property is has windmills!',
+            },
+            { 
+              id: 1,
+              name: 'Modern',
+              icon: MdOutlineVilla,
+              description: 'This property is modern!'
+            },
+            { 
+              id: 1,
+              name: 'Countryside',
+              icon: TbMountain,
+              description: 'This property is in the countryside!'
+            },
+            { 
+              id: 1,
+              name: 'Pools',
+              icon: TbPool,
+              description: 'This is property has a beautiful pool!'
+            },
+            { 
+              id: 1,
+              name: 'Islands',
+              icon: GiIsland,
+              description: 'This property is on an island!'
+            },
+            { 
+              id: 1,
+              name: 'Lake',
+              icon: GiBoatFishing,
+              description: 'This property is near a lake!'
+            },
+            { 
+              id: 1,
+              name: 'Skiing',
+              icon: FaSkiing,
+              description: 'This property has skiing activies!'
+            },
+            { 
+              id: 1,
+              name: 'Castles',
+              icon: GiCastle,
+              description: 'This property is an ancient castle!'
+            },
+            { 
+              id: 1,
+              name: 'Caves',
+              icon: GiCaveEntrance,
+              description: 'This property is in a spooky cave!'
+            },
+            { 
+              id: 1,
+              name: 'Camping',
+              icon: GiForestCamp,
+              description: 'This property offers camping activities!'
+            },
+            { 
+              id: 1,
+              name: 'Arctic',
+              icon: BsSnow,
+              description: 'This property is in arctic environment!'
+            },
+            { 
+              id: 1,
+              name: 'Desert',
+              icon: GiCactus,
+              description: 'This property is in the desert!'
+            },
+            { 
+              id: 1,
+              name: 'Barns',
+              icon: GiBarn,
+              description: 'This property is in a barn!'
+            },
+            { 
+              id: 1,
+              name: 'Lux',
+              icon: IoDiamond,
+              description: 'This property is brand new and luxurious!'
+            }
+          ]
+  
   return { categories, links, menuItems }
 };
 

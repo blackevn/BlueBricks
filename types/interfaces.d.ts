@@ -114,7 +114,7 @@ export interface ContextData {
     id: number
     name: string
     icon: IconType 
-    link?: string
+    description?: string
 
   }
 
