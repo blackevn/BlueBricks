@@ -6,6 +6,7 @@ import Button from "../button"
 import { FiSearch} from 'react-icons/fi'
 import { IoClose } from 'react-icons/io5'
 import { HiArchive, HiAdjustments } from 'react-icons/hi'
+import { HiOutlineXMark } from 'react-icons/hi2'
 import { motion } from "framer-motion"
 import Input from "../input"
 import { useSearchParams } from "next/navigation"
@@ -57,7 +58,7 @@ const FilterNav: React.FC = () => {
                         text=''
                         modifier="h-full text-[1.5em] lg:text-[2em] lg:p-8"
                         clickEvent={closeSearch}
-                        icon={IoClose}/>
+                        icon={HiOutlineXMark}/>
                        </div>
                        
                 </motion.div>}
@@ -80,7 +81,7 @@ const FilterNav: React.FC = () => {
                     <Button
                     clickEvent={closeCatogories}
                     modifier="h-full text-[1rem] lg:text-[1.2rem] lg:p-6"
-                    icon={IoClose}
+                    icon={HiOutlineXMark}
                     text=""
                     />
                 </motion.div>}
