@@ -31,7 +31,7 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
                  label="Add your property"
                  modifier="btn p-2"
                  icon={FaPlus}
-                 modal={'modal-1'}
+                 modal={'modal-2'}
                  toggle={toggleModal}
                  >
                    
