@@ -47,7 +47,7 @@ const handleParams = useCallback(() => {
                 <div
                 onClick={handleParams}
                 className={` ${selected && 'bg-gray-3'} filterItem`}>                
-                    <Icon className=" lg:h-8 "/>
+                    <Icon className="text-lg lg:text-xl "/>
                     <h1 className="text-[12px] md:text-md">{name}</h1>
                 </div>
           
