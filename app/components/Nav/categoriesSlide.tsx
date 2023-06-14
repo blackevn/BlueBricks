@@ -1,11 +1,12 @@
+'use client'
 import { useLinks } from "@/app/hooks";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import FilterItem from "./filterItem";
-import React from "react";
+
 
 type CategorySlideProps = {
-    category?: string
+    category?: string | null | undefined
 }
 
 const CategoriesSlide: React.FC<CategorySlideProps> = ({category}) => {
@@ -64,13 +65,14 @@ const CategoriesSlide: React.FC<CategorySlideProps> = ({category}) => {
   slidesToSlide={1}
   swipeable
 >
-{ categories.map(item => (<FilterItem
-                                              key={item.id}
-                                              id={item.id}
-                                              icon={item.icon}
-                                              name={item.name}
-                                              selected={category === item.name}
-                                              />))}
+  <div className="flex gap-4">
+    {categories.map((item) => (<FilterItem
+                             key={item.id}
+                             id={item.id}
+                             icon={item.icon}
+                             name={item.name}
+    />))}
+  </div>
 </Carousel>
 };
 

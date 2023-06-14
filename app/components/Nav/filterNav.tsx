@@ -87,7 +87,7 @@ const FilterNav: React.FC = () => {
                     />
                 </motion.div>}
 
-              { width >= 700 ?  <CategoriesSlide/> : 
+              { width >= 700 ?  <CategoriesSlide category={category}/> : 
 
                 <Button
                 modifier="border lg:p-6 text-[0.5rem] "
