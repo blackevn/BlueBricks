@@ -15,15 +15,15 @@ type ModalProps = {
 const Modal: React.FC<ModalProps> = ({children, modifier, label, icon: Icon, modal, toggle}) => {
 
 return <>
-      <label className={`flex ${modifier} space-x-2 items-center`} htmlFor={`${toggle && modal}`}> 
+      <label className={`flex ${modifier} space-x-2 items-center`} htmlFor={`${modal}`}> 
       <Icon/>
       <span>{label}</span>
       </label>
-        <input className="modal-state" id={`${toggle && modal}`} type="checkbox" />
+        <input className="modal-state" id={`${modal}`} type="checkbox" />
         <div className="modal">
-            <label className="modal-overlay" htmlFor={`${ toggle && modal}`}></label>
+            <label className="modal-overlay" htmlFor={`${modal}`}></label>
             <div className="modal-content flex flex-col gap-5">
-                <label htmlFor={`${toggle && modal}`} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
+                <label htmlFor={`${modal}`} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
                <div>{children}</div>
             </div>
         </div>
