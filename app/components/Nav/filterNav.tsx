@@ -10,6 +10,7 @@ import { HiOutlineXMark } from 'react-icons/hi2'
 import { motion } from "framer-motion"
 import Input from "../input"
 import { useSearchParams } from "next/navigation"
+import CategoriesSlide from "./categoriesSlide"
 
 
 const FilterNav: React.FC = () => {
@@ -86,15 +87,7 @@ const FilterNav: React.FC = () => {
                     />
                 </motion.div>}
 
-              { width >= 700 ?  <div className="flex gap-2 lg:gap-6 overflow-x-scroll w-[70%] lg:w-full p-4">
-                    { categories.map(item => (<FilterItem
-                                              key={item.id}
-                                              id={item.id}
-                                              icon={item.icon}
-                                              name={item.name}
-                                              selected={category === item.name}
-                                              />))}
-                </div> : 
+              { width >= 700 ?  <CategoriesSlide/> : 
 
                 <Button
                 modifier="border lg:p-6 text-[0.5rem] "
