@@ -27,7 +27,7 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
 
                 <div className="flex items-center gap-8">
 
-                <Modal
+          { currentUser && <Modal
                  label="Add your property"
                  modifier="btn px-4 rounded-full text-[0.75rem]"
                  icon={FaPlus}
@@ -35,7 +35,7 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
                  toggle={toggleModal}
                  >
                    
-                 </Modal>
+                 </Modal>}
 
                 { currentUser?.name ? <UserDropdown
                                       modifier="bg-gray-2"
