@@ -15,8 +15,7 @@ type ModalProps = {
 const Modal: React.FC<ModalProps> = ({children, modifier, label, icon: Icon, modal, toggle}) => {
 
 return <>
-      <label className={`flex ${modifier} space-x-2 p-0 items-center`} htmlFor={`${toggle && modal}`}> 
-
+      <label className={`flex ${modifier} space-x-2 items-center`} htmlFor={`${toggle && modal}`}> 
       <Icon/>
       <span>{label}</span>
       </label>

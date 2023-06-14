@@ -9,7 +9,7 @@ import { IUser } from "@/types/interfaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLinks, useToggle } from "@/app/hooks";
 import { signOut } from "next-auth/react";
-import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleRight, FaPlus } from "react-icons/fa";
 
 interface NavbarProps {
     currentUser: IUser | null
@@ -24,6 +24,18 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
             <nav className="w-screen flex justify-between items-center box-border">
                 <div className="flex w-full justify-between items-center p-4 lg:px-10">
                 <h1 className=" text-xl font-bold text-blue-600">Blue Bricks</h1>
+
+                <div className="flex items-center gap-8">
+
+                <Modal
+                 label="Add your property"
+                 modifier="btn p-2"
+                 icon={FaPlus}
+                 modal={'modal-1'}
+                 toggle={toggleModal}
+                 >
+                   
+                 </Modal>
 
                 { currentUser?.name ? <UserDropdown
                                       modifier="bg-gray-2"
@@ -58,6 +70,8 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
                     <AuthForm/>
                  </Modal>
                 }
+
+                </div>
                 </div>
 
               
