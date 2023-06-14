@@ -23,7 +23,6 @@ const FilterNav: React.FC = () => {
   const param = useSearchParams()
   const category = param?.get('category')
 
-  console.log(category);
   
 
     const closeSearch = () => {
@@ -120,7 +119,7 @@ const FilterNav: React.FC = () => {
 
                  {toggleSearchPanel && <div className="w-full min-h-[500px] bg-backgroundPrimary fixed grid place-items-center">
                         <div className="grid place-items-center gap-8">
-                            <IoClose className="text-[1.5em] lg:text-[2em]"/>
+                            <FiSearch className="text-[1.5em] lg:text-[2em]"/>
                         <h1>No recent searches</h1>
                         </div>
                 

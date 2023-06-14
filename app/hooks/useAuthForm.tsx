@@ -4,10 +4,10 @@ import { useState } from "react";
 import useToggle from "./useToggle";
 import { Toast } from "../components";
 import { toast } from "react-hot-toast";
-import { faAt, faEllipsisH, faHand } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { signIn } from 'next-auth/react';
 import { useRouter } from "next/navigation";
+import { FaAt, FaEllipsisH, FaHandSparkles } from "react-icons/fa";
 
 
 type AuthData = {
@@ -50,7 +50,7 @@ const useAuthForm = () => {
     errors.email = 'Email is required.';
     toast.custom((t: any) => (<Toast
                               modifier={`${t.visible ? 'animate-enter' : 'animate-leave'} bg-orange-500`}
-                              icon={faAt}
+                              icon={FaAt}
                               text="Email is required."
                               />))
   } else if (!/\S+@\S+\.\S+/.test(authData.email)) {
@@ -63,7 +63,7 @@ const useAuthForm = () => {
     errors.password = 'Password is required.';
     toast.custom((t: any) => (<Toast
       modifier={`${t.visible ? 'animate-enter' : 'animate-leave'} bg-orange-500`}
-      icon={faEllipsisH}
+      icon={FaEllipsisH}
       text="Password is required."
       />))
   } else {
@@ -92,7 +92,7 @@ const useAuthForm = () => {
           toast.custom(() => (<Toast
                               text="Welcome"
                               modifier="bg-blue-600"
-                              icon={faHand}
+                              icon={FaHandSparkles}
           />))
            
         } else {
@@ -105,7 +105,7 @@ const useAuthForm = () => {
           toast.custom(() => (<Toast
             text="Welcome"
             modifier="bg-blue-600"
-            icon={faHand}
+            icon={FaHandSparkles}
 
           />))
          

@@ -30,7 +30,7 @@ export interface ToastProps {
   modifier?: string
   children?: JSX.Element
   text?: string
-  icon?: IconDefinition
+  icon: IconType
   clickEvent?: ClickEvent
   mode?: boolean
   

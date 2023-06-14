@@ -1,7 +1,8 @@
-import { IconDefinition, faIcons } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+'use client'
+
 import { useSearchParams,  useRouter } from "next/navigation";
 import qs from "query-string"
+import { useCallback } from "react";
 import { IconType } from "react-icons";
 
 type FilterItemProps = {
@@ -16,7 +17,8 @@ const FilterItem: React.FC<FilterItemProps> = ({ icon: Icon, name = "Categories"
 const params = useSearchParams()
 const router = useRouter()
 
-const handleParams = () => {
+const handleParams = useCallback(() => {
+
     let currentParam = {}
 
     if ( params ){
@@ -38,13 +40,13 @@ const handleParams = () => {
     }, { skipNull: true })
 
     router.push(url)
-}
+}, [ router, params, name, selected]) 
    
   return <>
         
                 <div
                 onClick={handleParams}
-                className={` ${selected && 'bg-gray-3'} grid place-items-center gap-2 lg:gap-4 cursor-pointer p-2 lg:p-4 hover:bg-blue-600 rounded-lg lg:rounded-2xl w-20 lg:w-24 h-full`}>                
+                className={` ${selected && 'bg-gray-3'} filterItem`}>                
                     <Icon className="w-8 h-8"/>
                     <h1 className="text-[12px] md:text-md">{name}</h1>
                 </div>

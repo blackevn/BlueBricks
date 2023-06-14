@@ -4,6 +4,7 @@ import { Nav, ToasterWrap } from './components'
 import FilterNav from './components/Nav/filterNav'
 import { getCurrentUser } from './actions' 
 import { User } from '@prisma/client'
+import { Suspense } from 'react'
 
 const inter = Montserrat({ subsets: ['latin'] })
 
@@ -20,13 +21,19 @@ export default async function RootLayout({
 
   const currentUser = await getCurrentUser()
 
+  function SearchBarFallback() {
+    return <>placeholder</>
+  }
+
   return (
     
     <html lang="en">
             <body className={`${inter.className} box-border`}>
           <ToasterWrap/> 
-              <Nav currentUser={currentUser}/>
+          <Suspense fallback={<SearchBarFallback />}>
               <FilterNav/>
+          </Suspense>
+              <Nav currentUser={currentUser}/>
               {children}
             </body>
     </html>

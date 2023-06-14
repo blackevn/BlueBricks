@@ -1,18 +1,17 @@
 'use client'
+
 import Button from "../button";
 import Input from "../input";
 import { useAuthForm } from "@/app/hooks";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc"
+import { RiShieldUserFill } from "react-icons/ri"
 import { FaGithub, FaApple, FaUser, FaAt, FaEye, FaEyeSlash, FaArrowCircleRight } from "react-icons/fa"
-import { BiUserCircle } from 'react-icons/bi'
 
 
 const AuthForm: React.FC = () => {
 
 const {authData, handleAuthValues, isSignup, setSignup, switchSignup, showPassword, handleShowPassword, sendAuthData } = useAuthForm()
-
-console.log(authData);
 
 
   return <>
@@ -47,7 +46,7 @@ console.log(authData);
 		
     <Input
 	  modifier={`authInput focus:bg-backgroundPrimary`}
-      icon={BiUserCircle} 
+      icon={RiShieldUserFill} 
 	  type='text' 
 	  name='name' 
 	  value={authData.name} 

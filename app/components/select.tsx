@@ -1,3 +1,4 @@
+'use client'
 
 const Select = (props: any) => {
 

@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import Avatar from "./avatar";
 import { IProps, IUser } from "@/types/interfaces";
