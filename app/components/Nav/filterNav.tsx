@@ -87,7 +87,16 @@ const FilterNav: React.FC = () => {
                     />
                 </motion.div>}
 
-              { width >= 700 ?  <CategoriesSlide category={category}/> : 
+              { width >= 700 ?   <div className='flex gap-2 lg:gap-6 overflow-x-scroll item-center p-4'>
+                     { categories.map(item => (<FilterItem
+                                              key={item.id}
+                                              id={item.id}
+                                              icon={item.icon}
+                                              name={item.name}
+                                              selected={category === item.name}
+                                              />))}
+
+                    </div> : 
 
                 <Button
                 modifier="border lg:p-6 text-[0.5rem] "
