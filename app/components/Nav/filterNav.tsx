@@ -97,7 +97,7 @@ const FilterNav: React.FC = () => {
                 </div> : 
 
                 <Button
-                modifier="border lg:p-6 text-[1rem] "
+                modifier="border lg:p-6 text-[0.5rem] "
                 text="Categories"
                 clickEvent={handleCatergories}
                 icon={HiArchive}
@@ -107,11 +107,11 @@ const FilterNav: React.FC = () => {
                 <Button
                  icon={HiAdjustments}
                  text="Filter"
-                 modifier="lg:p-6 border text-[1rem] "
+                 modifier="lg:p-6 border text-[0.5rem] "
                 />
                 <Button
                 icon={FiSearch}
-                modifier="rounded-full lg:p-6 border text-[1rem] "
+                modifier="rounded-full lg:p-6 border text-[0.5rem] "
                 text=""
                 clickEvent={handleToggleSearch}
                 />
