@@ -49,13 +49,13 @@ const FilterNav: React.FC = () => {
                         value=""
                         name=""
                         modifier="h-full w-full text-[1rem] lg:text-[1.2rem] bg-backgroundPrimary outline-none"
-                        placeholder="Search..."
-                        iconModifier=" text-[1rem] lg:text-[1.2rem]"
+                        placeholder="Search Cities, Towns, Styles.... "
+                        iconModifier=" text-[1.5em] lg:text-[2em]"
                         icon={FiSearch}
                         />
                         <Button 
                         text=''
-                        modifier="h-full text-[1rem] lg:text-[1.2rem] lg:p-8"
+                        modifier="h-full text-[1.5em] lg:text-[2em] lg:p-8"
                         clickEvent={closeSearch}
                         icon={IoClose}/>
                        </div>
