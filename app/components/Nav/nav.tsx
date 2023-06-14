@@ -9,6 +9,7 @@ import { IUser } from "@/types/interfaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLinks } from "@/app/hooks";
 import { signOut } from "next-auth/react";
+import { FaArrowCircleRight } from "react-icons/fa";
 
 interface NavbarProps {
     currentUser: IUser | null
@@ -48,8 +49,8 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
 
                  <Modal
                  label="Login"
-                 modifier="rounded-full"
-                 icon={faArrowCircleRight}
+                 modifier=""
+                 icon={FaArrowCircleRight}
                  >
                     <AuthForm/>
                  </Modal>

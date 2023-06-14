@@ -1,6 +1,6 @@
 
 const page = () => {
-  return <div>Blue Bricks</div>;
+  return <div></div>;
 };
 
 export default page;

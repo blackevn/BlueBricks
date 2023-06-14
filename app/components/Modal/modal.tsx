@@ -2,21 +2,22 @@
 
 import { IconDefinition, faIcons } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconType } from "react-icons";
 
 type ModalProps = {
 
     children?: React.ReactNode;
     modifier?: string
     label?: string
-    icon?: IconDefinition
+    icon: IconType
 
 }
 
-const Modal: React.FC<ModalProps> = ({children, modifier, label, icon = faIcons}) => {
+const Modal: React.FC<ModalProps> = ({children, modifier, label, icon: Icon}) => {
 
 return <>
-      <label className={`btn ${modifier} space-x-2`} htmlFor="modal-1"> 
-      <FontAwesomeIcon icon={icon}/>
+      <label className={`flex ${modifier} space-x-2 p-0`} htmlFor="modal-1"> 
+      <Icon/>
       <span>{label}</span>
       </label>
         <input className="modal-state" id="modal-1" type="checkbox" />
