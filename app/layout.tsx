@@ -30,10 +30,10 @@ export default async function RootLayout({
     <html lang="en">
             <body className={`${inter.className} box-border`}>
           <ToasterWrap/> 
-          <Suspense fallback={<SearchBarFallback />}>
-              <FilterNav/>
-          </Suspense>
               <Nav currentUser={currentUser}/>
+            <Suspense fallback={<SearchBarFallback />}>
+                <FilterNav/>
+            </Suspense>
               {children}
             </body>
     </html>
