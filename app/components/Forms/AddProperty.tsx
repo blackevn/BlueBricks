@@ -32,7 +32,11 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   const [step, setStep] = useState(STEPS.CATEGORY);
 
   const onBack = () => {
-    setStep((value) => value - 1);
+    if( step === STEPS.CATEGORY){
+      setStep(STEPS.CATEGORY)
+    } else {
+      setStep((value) => value - 1);
+    }
   }
 
   const onNext = () => {
@@ -56,14 +60,20 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         </div>
                       )
 
-  
+  if (step === STEPS.DESCRIPTION){
+    bodyContent = (
+                    <div>
+                      <Heading label="Add your property > Description"/>
+                    </div>
+    )
+  }
 
 
   return <div className="p-4 lg:p-8">
             {bodyContent}
             <div className="flex w-full items-center justify-between">
-              <Button text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>
-              <Button text="Next" modifier="btn flex-row-reverse" icon={IoChevronForwardCircleSharp}/>
+              <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>
+              <Button clickEvent={onNext} text="Next" modifier="btn flex-row-reverse" icon={IoChevronForwardCircleSharp}/>
             </div>
         </div>
 };
