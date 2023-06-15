@@ -14,18 +14,10 @@ const GeneralContext = createContext<ContextData>({
 
 export const GeneralAppContext = ({ children }: IProps) => {
 
-  
-  const initialListingInfo: Listing = {
-    category: '',
-    description: ''
-}
-
-const [ propertyInfo, setPropertyInfo ] = useState<Listing>(initialListingInfo)
-
     const [ height ] = useHeight()
     const [ width ] = useWidth()
 
-  return <GeneralContext.Provider value={{ height,  width, propertyInfo, setPropertyInfo }}>
+  return <GeneralContext.Provider value={{ height,  width }}>
 
             {children}
 

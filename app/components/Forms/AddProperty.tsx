@@ -5,8 +5,10 @@ import { BsHouseAdd } from "react-icons/bs";
 import Button from "../button";
 import { IoChevronBackCircleSharp, IoChevronForwardCircleSharp } from "react-icons/io5";
 import Input from "../input";
-import { useLinks } from "@/app/hooks";
+import { useAddProperty, useLinks } from "@/app/hooks";
 import { useGeneralContext } from "@/app/context/AppContext";
+import CategoryItem from "./categoryItem";
+import { Listing } from "@prisma/client";
 
 enum STEPS {
   CATEGORY = 0,
@@ -37,13 +39,16 @@ const Heading: React.FC<Props> = ({ label, title }) => {
 const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const { categories } = useLinks()
-  const { propertyInfo } = useGeneralContext()
+  const { propertyInfo, setPropertyInfo } = useAddProperty()
   const [step, setStep] = useState(STEPS.CATEGORY);
 
+  
+  const categorySelect = () => {
+    setPropertyInfo({...propertyInfo, category: 'ha'})
+  }
 
   console.log(propertyInfo);
   
-
   const onBack = () => {
     if( step === STEPS.CATEGORY){
       setStep(0)
@@ -70,9 +75,12 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         title="Select Category"/>
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         { categories.map(item => (
-                        <h1 className="rounded-md hover:bg-backgroundSecondary p-4 text-center cursor-pointer flex gap-2 items-center">
-                           <item.icon className="text-xl"/>{item.name}
-                        </h1>
+                          <CategoryItem
+                           onClick={categorySelect}
+                           icon={item.icon}
+                           name={item.name}
+                           key={item.id}
+                          />
                         ))}
                         </div>
                         </div>

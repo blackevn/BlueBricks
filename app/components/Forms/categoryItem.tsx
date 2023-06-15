@@ -1,29 +1,22 @@
+'use client'
 
-import { useGeneralContext } from "@/app/context/AppContext";
-import { Listing } from "@/types/interfaces";
+import { ClickEvent, Listing } from "@/types/interfaces";
 import { IconType } from "react-icons";
 
 type CategortItemsProps = {
      selected?: boolean
      icon: IconType
      name: string
+     onClick?: ClickEvent 
 }
 
-const { propertyInfo, setPropertyInfo } = useGeneralContext()
-
-const categoryItem: React.FC<CategortItemsProps> = ({ icon: Icon, selected, name }) => {
-
-     const categorySelect = () => {
-          setPropertyInfo((prevInfo: Listing) => ({...prevInfo, category: name}))
-     }
-
-     console.log(propertyInfo)
+const CategoryItem: React.FC<CategortItemsProps> = ({ icon: Icon, selected, name, onClick }) => {
 
   return <h1
-          onClick={categorySelect}
+          onClick={onClick}
           className="rounded-md hover:bg-backgroundSecondary p-4 text-center cursor-pointer flex gap-2 items-center">
             <Icon className="text-xl"/>{name}
         </h1>
 };
 
-export default categoryItem;
+export default CategoryItem;
