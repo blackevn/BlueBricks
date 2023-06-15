@@ -38,7 +38,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const onBack = () => {
     if( step === STEPS.CATEGORY){
-      setStep(STEPS.CATEGORY)
+      setStep(0)
     } else {
       setStep((prevValue) => prevValue - 1);
     }
@@ -46,7 +46,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const onNext = () => {
     if( step === STEPS.PRICE){
-      setStep(STEPS.PRICE)
+      setStep(5)
     } else {
     setStep((prevValue) => prevValue + 1);
   }
