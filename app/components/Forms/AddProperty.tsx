@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { BsHouseAdd } from "react-icons/bs";
+import Button from "../button";
+import { IoChevronBackCircleSharp, IoChevronForwardCircleSharp } from "react-icons/io5";
 
 enum STEPS {
   CATEGORY = 0,
@@ -50,6 +52,10 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   return <div className="p-4 lg:p-8">
             {bodyContent}
+            <div className="flex w-full items-center justify-between">
+              <Button modifier="btn" icon={IoChevronBackCircleSharp}/>
+              <Button modifier="btn" icon={IoChevronForwardCircleSharp}/>
+            </div>
         </div>
 };
 
