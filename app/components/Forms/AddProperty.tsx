@@ -1,12 +1,13 @@
 'use client'
 
+import { BsHouseAdd } from "react-icons/bs";
+
 const AddProperty = () => {
 
     let bodyContent = ( 
-
-                    <div>
-                    <h1>Hello</h1>
-                    </div>
+                        <div>
+                        <h1><BsHouseAdd/> Add your property</h1>
+                        </div>
                   )
 
 
