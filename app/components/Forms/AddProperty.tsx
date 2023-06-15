@@ -72,6 +72,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         { categories.map(item => (
                           <CategoryItem
+                           selected={propertyInfo.category === item.name}
                            icon={item.icon}
                            name={item.name}
                            key={item.id}
