@@ -1,7 +1,16 @@
 'use client'
 
-import React from "react";
+import React, { useState } from "react";
 import { BsHouseAdd } from "react-icons/bs";
+
+enum STEPS {
+  CATEGORY = 0,
+  LOCATION = 1,
+  INFO = 2,
+  IMAGES = 3,
+  DESCRIPTION = 4,
+  PRICE = 5,
+}
 
 type Props = {
   label: string
@@ -16,12 +25,27 @@ const Heading: React.FC<Props> = ({ label }) => {
 }
 
 const AddProperty: React.FC<AddPropertyProps> = () => {
+
+  const [step, setStep] = useState(STEPS.CATEGORY);
+
+  const onBack = () => {
+    setStep((value) => value - 1);
+  }
+
+  const onNext = () => {
+    setStep((value) => value + 1);
+  }
+
+  console.log(step);
+  
   
     let bodyContent = ( 
                         <div>
                         <Heading label='Add your property'/>
                         </div>
                       )
+
+  
 
 
   return <div className="p-4 lg:p-8">

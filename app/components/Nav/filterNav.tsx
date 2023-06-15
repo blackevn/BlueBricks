@@ -69,7 +69,7 @@ const FilterNav: React.FC = () => {
                 animate='show'
                 initial='hidden'    
                 className="absolute z-10 h-full left-0 bg-backgroundPrimary w-full flex gap-2 px-4 lg:px-10 items-center">
-                    <div className='flex gap-2 lg:gap-6 overflow-x-scroll item-center p-4'>
+                    <div className='flex gap-2 lg:gap-6 overflow-x-scroll item-center py-4'>
                      { categories.map(item => (<FilterItem
                                               key={item.id}
                                               id={item.id}
@@ -87,7 +87,7 @@ const FilterNav: React.FC = () => {
                     />
                 </motion.div>}
 
-              { width >= 700 ?   <div className='flex gap-2 lg:gap-6 overflow-x-scroll item-center p-4'>
+              { width >= 700 ?   <div className='flex gap-2 lg:gap-6 overflow-x-scroll item-center py-4'>
                      { categories.map(item => (<FilterItem
                                               key={item.id}
                                               id={item.id}
