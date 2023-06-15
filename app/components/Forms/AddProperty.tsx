@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { BsHouseAdd } from "react-icons/bs";
 import Button from "../button";
 import { IoChevronBackCircleSharp, IoChevronForwardCircleSharp } from "react-icons/io5";
+import Input from "../input";
 
 enum STEPS {
   CATEGORY = 0,
@@ -44,6 +45,14 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     let bodyContent = ( 
                         <div>
                         <Heading label='Add your property'/>
+                        <div>
+                          <Input
+                          name="name"
+                          value="value"
+                          placeholder=""
+                          type=""
+                          icon={BsHouseAdd}/>
+                        </div>
                         </div>
                       )
 
