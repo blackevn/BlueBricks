@@ -17,14 +17,19 @@ enum STEPS {
 
 type Props = {
   label: string
+  title: string 
 }
 
 type AddPropertyProps = {
 
 }
 
-const Heading: React.FC<Props> = ({ label }) => {
-  return <h1 className="flex items-center gap-2 text-xl font-bold"><BsHouseAdd/><span>{label}</span></h1>
+const Heading: React.FC<Props> = ({ label, title }) => {
+  return <div className="space-x-2">
+          <h1 className="flex items-center gap-2 text-xl font-bold"><BsHouseAdd/><span>{label}</span></h1>
+          <h1 className="text-lg font-bold">{title}</h1>
+        </div> 
+  
 }
 
 const AddProperty: React.FC<AddPropertyProps> = () => {
@@ -48,7 +53,9 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   
     let bodyContent = ( 
                         <div>
-                        <Heading label='Add your property'/>
+                        <Heading 
+                        label='Add your property'
+                        title="Category"/>
                         <div>
                           <Input
                           name="name"
@@ -63,13 +70,25 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   if (step === STEPS.DESCRIPTION){
     bodyContent = (
                     <div>
-                      <Heading label="Add your property > Description"/>
+                      <Heading 
+                      title="Description"
+                      label="Add your property"/>
+                    </div>
+    )
+  }
+
+  if (step === STEPS.IMAGES){
+    bodyContent = (
+                    <div>
+                      <Heading 
+                      title="Images"
+                      label="Add your property"/>
                     </div>
     )
   }
 
 
-  return <div className="p-4 lg:p-8">
+  return <div className="p-4 lg:p-6 min-w-[300px] lg:min-w-[500px]">
             {bodyContent}
             <div className="flex w-full items-center justify-between">
               <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>
