@@ -82,6 +82,17 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     )
   }
 
+
+  if (step === STEPS.INFO){
+    bodyContent = (
+                    <div>
+                      <Heading 
+                      title="Information"
+                      label="Add your property"/>
+                    </div>
+    )
+  }
+
   if (step === STEPS.IMAGES){
     bodyContent = (
                     <div>
@@ -104,7 +115,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     bodyContent = (
                     <div>
                       <Heading 
-                      title="Information"
+                      title="Price"
                       label="Add your property"/>
                     </div>
     )
