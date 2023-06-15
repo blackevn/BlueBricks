@@ -26,7 +26,7 @@ const CategoryItem: React.FC<CategortItemsProps> = ({selected, icon: Icon,  name
   return <h1
           onClick={categorySelect}
           className={`rounded-md hover:bg-blue-600 p-4 text-center cursor-pointer flex gap-2 items-center 
-          ${selected && 'bg-backgroundSecondary'}`}>
+          ${selected && 'bg-gray-3'}`}>
             <Icon className="text-xl"/>{name}
         </h1>
 };
