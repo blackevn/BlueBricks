@@ -72,28 +72,28 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         </div>
                       )
 
-  if (step === STEPS.DESCRIPTION){
+  if (step === STEPS.LOCATION){
     bodyContent = (
                     <div>
                       <Heading 
-                      title="Description"
+                      title="Location"
                       label="Add your property"/>
                     </div>
     )
   }
 
-  if (step === STEPS.IMAGES){
+  if (step === STEPS.INFO){
     bodyContent = (
                     <div>
                       <Heading 
-                      title="Images"
+                      title="Information"
                       label="Add your property"/>
                     </div>
     )
   }
 
 
-  return <div className="p-4 lg:p-6 min-w-[300px] lg:min-w-[500px]">
+  return <div className="p-4 lg:p-6 min-w-[300px] lg:min-w-[800px]">
             {bodyContent}
             <div className="flex w-full items-center justify-between">
               <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>
