@@ -12,7 +12,7 @@ type AddPropertyProps = {
 }
 
 const Heading: React.FC<Props> = ({ label }) => {
-  return <h1 className="flex"><BsHouseAdd/><span>{label}</span></h1>
+  return <h1 className="flex items-center gap-2 text-xl font-bold"><BsHouseAdd/><span>{label}</span></h1>
 }
 
 const AddProperty: React.FC<AddPropertyProps> = () => {
