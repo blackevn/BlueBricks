@@ -5,6 +5,7 @@ import { BsHouseAdd } from "react-icons/bs";
 import Button from "../button";
 import { IoChevronBackCircleSharp, IoChevronForwardCircleSharp } from "react-icons/io5";
 import Input from "../input";
+import { useLinks } from "@/app/hooks";
 
 enum STEPS {
   CATEGORY = 0,
@@ -25,7 +26,7 @@ type AddPropertyProps = {
 }
 
 const Heading: React.FC<Props> = ({ label, title }) => {
-  return <div className="space-x-2">
+  return <div className="space-x-4">
           <h1 className="flex items-center gap-2 text-xl font-bold"><BsHouseAdd/><span>{label}</span></h1>
           <h1 className="text-lg font-bold">{title}</h1>
         </div> 
@@ -33,6 +34,8 @@ const Heading: React.FC<Props> = ({ label, title }) => {
 }
 
 const AddProperty: React.FC<AddPropertyProps> = () => {
+
+  const { categories } = useLinks()
 
   const [step, setStep] = useState(STEPS.CATEGORY);
 
@@ -59,15 +62,9 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         <div>
                         <Heading 
                         label='Add your property'
-                        title="Category"/>
-                        <div>
-                          <Input
-                          name="name"
-                          value="value"
-                          placeholder=""
-                          type=""
-                          icon={BsHouseAdd}
-                          modifier="input"/>
+                        title="Select Category"/>
+                        <div className="grid grid-cols-2 gap-4">
+                        { categories.map(item => (<h1 className="rounded-lg hover:bg-backgroundSecondary">{item.name}</h1>))}
                         </div>
                         </div>
                       )
@@ -124,7 +121,8 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   return <div className="p-4 lg:p-6 ">
             <div className="p-4">
-            {bodyContent}
+
+              {bodyContent}
 
             </div>
             <div className="flex w-full items-center justify-between">
