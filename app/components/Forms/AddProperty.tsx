@@ -26,7 +26,7 @@ type AddPropertyProps = {
 }
 
 const Heading: React.FC<Props> = ({ label, title }) => {
-  return <div className="space-x-4">
+  return <div className="space-y-4">
           <h1 className="flex items-center gap-2 text-xl font-bold"><BsHouseAdd/><span>{label}</span></h1>
           <h1 className="text-lg font-bold">{title}</h1>
         </div> 
@@ -119,7 +119,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   }
 
 
-  return <div className="p-4 lg:p-6 ">
+  return <div className="p-4 lg:p-6 space-y-4">
             <div className="p-4">
 
               {bodyContent}
