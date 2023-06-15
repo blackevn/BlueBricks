@@ -19,10 +19,10 @@ return <>
         <Icon/>
         <span>{label}</span>
       </label>
-        <input className="modal-state w-auto" id={`${modal}`} type="checkbox" />
+        <input className="modal-state " id={`${modal}`} type="checkbox" />
         <div className="modal">
             <label className="modal-overlay" htmlFor={`${modal}`}></label>
-            <div className="modal-content flex flex-col gap-5">
+            <div className="modal-content flex flex-col gap-5 w-auto">
                 <label htmlFor={`${modal}`} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
                <div>{children}</div>
             </div>
