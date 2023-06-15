@@ -42,10 +42,6 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   const { propertyInfo, setPropertyInfo } = useAddProperty()
   const [step, setStep] = useState(STEPS.CATEGORY);
 
-  
-  const categorySelect = () => {
-    setPropertyInfo({...propertyInfo, category: 'ha'})
-  }
 
   console.log(propertyInfo);
   
@@ -76,10 +72,11 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         { categories.map(item => (
                           <CategoryItem
-                           onClick={categorySelect}
                            icon={item.icon}
                            name={item.name}
                            key={item.id}
+                           propertyInfo={propertyInfo}
+                           setPropertyInfo={setPropertyInfo}
                           />
                         ))}
                         </div>
