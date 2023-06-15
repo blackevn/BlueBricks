@@ -11,6 +11,7 @@ import { useLinks, useToggle } from "@/app/hooks";
 import { signOut } from "next-auth/react";
 import { FaArrowCircleRight, FaPlus } from "react-icons/fa";
 import AddProperty from "../Forms/AddProperty";
+import { BsHouseAdd } from "react-icons/bs";
 
 interface NavbarProps {
     currentUser: IUser | null
@@ -31,7 +32,7 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
           { currentUser && <Modal
                  label="Add your property"
                  modifier="btn px-4 rounded-full text-[0.75rem]"
-                 icon={FaPlus}
+                 icon={BsHouseAdd}
                  modal={'modal-2'}
                  toggle={toggleModal}
                  >
