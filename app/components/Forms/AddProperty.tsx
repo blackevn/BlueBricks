@@ -93,8 +93,11 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   }
 
 
-  return <div className="p-4 lg:p-6 min-w-[300px] lg:min-w-[800px]">
+  return <div className="p-4 lg:p-6 ">
+            <div className="p-4">
             {bodyContent}
+
+            </div>
             <div className="flex w-full items-center justify-between">
               <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>
               <Button clickEvent={onNext} text="Next" modifier="btn flex-row-reverse" icon={IoChevronForwardCircleSharp}/>
