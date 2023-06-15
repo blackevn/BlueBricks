@@ -141,7 +141,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
             </div>
             <div className="flex w-full items-center justify-between ">
-              <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>
+             {step !== 0 && <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>}
               <Button clickEvent={onNext} text="Next" modifier="btn flex-row-reverse" icon={IoChevronForwardCircleSharp}/>
             </div>
         </div>
