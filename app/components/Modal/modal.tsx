@@ -22,7 +22,7 @@ return <>
         <input className="modal-state" id={`${modal}`} type="checkbox" />
         <div className="modal">
             <label className="modal-overlay" htmlFor={`${modal}`}></label>
-            <div className="modal-content flex flex-col gap-5">
+            <div className="flex flex-col gap-5">
                 <label htmlFor={`${modal}`} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
                <div>{children}</div>
             </div>
