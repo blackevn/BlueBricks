@@ -59,11 +59,11 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   
   
     let bodyContent = ( 
-                        <div>
+                        <div className="space-y-4">
                         <Heading 
                         label='Add your property'
                         title="Select Category"/>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-3 gap-4">
                         { categories.map(item => (<h1 className="rounded-md hover:bg-backgroundSecondary p-4 text-center">{item.name}</h1>))}
                         </div>
                         </div>
