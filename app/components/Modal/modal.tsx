@@ -16,8 +16,8 @@ const Modal: React.FC<ModalProps> = ({children, modifier, label, icon: Icon, mod
 
 return <>
       <label className={`flex ${modifier} space-x-2 items-center`} htmlFor={`${modal}`}> 
-      <Icon/>
-      <span>{label}</span>
+        <Icon/>
+        <span>{label}</span>
       </label>
         <input className="modal-state" id={`${modal}`} type="checkbox" />
         <div className="modal">

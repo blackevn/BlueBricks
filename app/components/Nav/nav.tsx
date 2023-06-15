@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLinks, useToggle } from "@/app/hooks";
 import { signOut } from "next-auth/react";
 import { FaArrowCircleRight, FaPlus } from "react-icons/fa";
+import AddProperty from "../Forms/AddProperty";
 
 interface NavbarProps {
     currentUser: IUser | null
@@ -34,6 +35,8 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
                  modal={'modal-2'}
                  toggle={toggleModal}
                  >
+
+                    <AddProperty/>
                    
                  </Modal>}
 
