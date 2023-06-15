@@ -1,6 +1,7 @@
+'use client'
 
-import {useContext, createContext } from "react";
-import { IProps, ContextData } from "@/types/interfaces";
+import {useContext, createContext, useState } from "react";
+import { IProps, ContextData, Listing } from "@/types/interfaces";
 import { useToggle, useHeight, useWidth, useAddProperty } from "../hooks";
 
 
@@ -13,7 +14,14 @@ const GeneralContext = createContext<ContextData>({
 
 export const GeneralAppContext = ({ children }: IProps) => {
 
-    const { propertyInfo, setPropertyInfo } = useAddProperty()
+  
+  const initialListingInfo: Listing = {
+    category: '',
+    description: ''
+}
+
+const [ propertyInfo, setPropertyInfo ] = useState<Listing>(initialListingInfo)
+
     const [ height ] = useHeight()
     const [ width ] = useWidth()
 
