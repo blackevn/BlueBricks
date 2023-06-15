@@ -6,6 +6,7 @@ import Button from "../button";
 import { IoChevronBackCircleSharp, IoChevronForwardCircleSharp } from "react-icons/io5";
 import Input from "../input";
 import { useLinks } from "@/app/hooks";
+import { useGeneralContext } from "@/app/context/AppContext";
 
 enum STEPS {
   CATEGORY = 0,
@@ -36,8 +37,12 @@ const Heading: React.FC<Props> = ({ label, title }) => {
 const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const { categories } = useLinks()
-
+  const { propertyInfo } = useGeneralContext()
   const [step, setStep] = useState(STEPS.CATEGORY);
+
+
+  console.log(propertyInfo);
+  
 
   const onBack = () => {
     if( step === STEPS.CATEGORY){

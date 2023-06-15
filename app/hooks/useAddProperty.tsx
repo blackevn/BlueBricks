@@ -4,7 +4,8 @@ import { useState } from "react";
 const useAddProperty = () => {
 
     const initialListingInfo: Listing = {
-          category: ''
+          category: '',
+          description: ''
     }
 
     const [ propertyInfo, setPropertyInfo ] = useState<Listing>(initialListingInfo)
