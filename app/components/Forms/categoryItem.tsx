@@ -23,14 +23,14 @@ const CategoryItem: React.FC<CategortItemsProps> = ({selected, icon: Icon,  name
 
   }, [propertyInfo, setPropertyInfo, name])
 
-  return <h1
+  return <div
           onClick={categorySelect}
-          className={`rounded-md hover:bg-blue-600 p-4 cursor-pointer flex gap-2 items-center 
+          className={`rounded-md hover:bg-blue-600 p-4 cursor-pointer grid place-items-center
           ${selected && 'bg-gray-3'}`}>
           <span className="flex gap-4 items-center">
-            <Icon className="text-xl"/><span>{name}</span>
+            <Icon className="text-xl"/><h1>{name}</h1>
           </span>
-        </h1>
+        </div>
 };
 
 export default CategoryItem;
