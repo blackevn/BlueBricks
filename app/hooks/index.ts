@@ -5,8 +5,10 @@ import useToggle from "./useToggle";
 import useVariants from "./useVariants";
 import useLinks from "./useLinks";
 import useAuthForm from "./useAuthForm";
+import useAddProperty from "./useAddProperty";
 
 export {
     useDarkMode, useVariants, useHeight, 
-    useWidth, useToggle, useLinks, useAuthForm
+    useWidth, useToggle, useLinks, useAuthForm,
+    useAddProperty
 }

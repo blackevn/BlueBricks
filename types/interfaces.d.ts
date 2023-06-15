@@ -1,7 +1,7 @@
 import { Toggle } from '@/app/components';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { type } from 'os';
-import { FormEventHandler, ReactNode } from 'react';
+import React, { FormEventHandler, ReactNode } from 'react';
 import { IconBaseProps, IconType } from 'react-icons';
 
 type FunctionHandler = () => void;
@@ -94,8 +94,9 @@ export interface ContextData {
   showPassword?: ToggleHandler
   handleToggle?: ClickEvent
   darkMode?: ToggleHandler
-  toggleDarkMode?: ClickEvent
-  
+  toggleDarkMode?: ClickEvent,
+  propertyInfo?: Listing
+  setPropertyInfo?: Dispatch<SetStateAction<Listing>>
 }
 
   export interface NavigationLinks {
@@ -131,5 +132,22 @@ export interface ContextData {
     favoriteIds: string[];
   
   }
+
+  export  type Listing = {
+
+    id?: number
+    title?: String
+    description?: string
+    imageSrc?: String
+    createdAt?: string
+    category?:  string
+    roomCount?: number
+    bathroomCount?: number
+    guestCount?: number
+    locationValue?: string
+    userId?: string
+    price?: string
+  
+}
 
 

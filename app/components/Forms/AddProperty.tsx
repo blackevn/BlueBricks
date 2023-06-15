@@ -63,10 +63,10 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         <Heading 
                         label='Add your property'
                         title="Select Category"/>
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         { categories.map(item => (
                         <h1 className="rounded-md hover:bg-backgroundSecondary p-4 text-center cursor-pointer flex gap-2 items-center">
-                           <item.icon/>{item.name}
+                           <item.icon className="text-xl"/>{item.name}
                         </h1>
                         ))}
                         </div>
