@@ -134,7 +134,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   }
 
 
-  return <div className="p-4 lg:p-6 space-y-4 lg:min-w-[800px]">
+  return <div className="p-4 lg:p-6 space-y-4 min-w-[70%] min-h-[60%]">
             <div className="p-4">
 
               {bodyContent}
