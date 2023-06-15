@@ -1,8 +1,13 @@
-
+'use client'
 
 const AddProperty = () => {
 
-    let bodyContent = <div>Hello</div>
+    let bodyContent = ( 
+
+                    <div>
+                    <h1>Hello</h1>
+                    </div>
+                  )
 
 
   return <div>
