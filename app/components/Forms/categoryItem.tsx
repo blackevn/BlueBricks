@@ -5,7 +5,7 @@ import { useCallback } from "react";
 import { IconType } from "react-icons";
 
 type CategortItemsProps = {
-     selected?: boolean
+     
      icon: IconType
      name: string
      setPropertyInfo:  React.Dispatch<React.SetStateAction<Listing>>
@@ -13,7 +13,7 @@ type CategortItemsProps = {
      
 }
 
-const CategoryItem: React.FC<CategortItemsProps> = ({ icon: Icon, selected, name, propertyInfo, setPropertyInfo }) => {
+const CategoryItem: React.FC<CategortItemsProps> = ({ icon: Icon,  name, propertyInfo, setPropertyInfo }) => {
 
        
   const categorySelect = useCallback(() => {
@@ -21,10 +21,10 @@ const CategoryItem: React.FC<CategortItemsProps> = ({ icon: Icon, selected, name
        setPropertyInfo((prevInfo => ({...prevInfo, category: name})))
 
   }, [propertyInfo, setPropertyInfo, name])
-
   return <h1
           onClick={categorySelect}
-          className="rounded-md hover:bg-backgroundSecondary p-4 text-center cursor-pointer flex gap-2 items-center">
+          className={`rounded-md hover:bg-blue-600 p-4 text-center cursor-pointer flex gap-2 items-center 
+          ${propertyInfo.category === name && 'bg-backgroundPrimary'}`}>
             <Icon className="text-xl"/>{name}
         </h1>
 };
