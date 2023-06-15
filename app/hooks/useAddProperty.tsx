@@ -4,8 +4,15 @@ import { useState } from "react";
 const useAddProperty = () => {
 
     const initialListingInfo: Listing = {
-          category: '',
-          description: ''
+      category: '',
+      location: null,
+      guestCount: 1,
+      roomCount: 1,
+      bathroomCount: 1,
+      imageSrc: '',
+      price: 1,
+      title: '',
+      description: '',
     }
 
     const [ propertyInfo, setPropertyInfo ] = useState<Listing>(initialListingInfo)
