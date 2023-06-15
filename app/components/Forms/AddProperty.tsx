@@ -62,7 +62,8 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                           value="value"
                           placeholder=""
                           type=""
-                          icon={BsHouseAdd}/>
+                          icon={BsHouseAdd}
+                          modifier="input"/>
                         </div>
                         </div>
                       )
