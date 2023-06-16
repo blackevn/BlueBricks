@@ -4,6 +4,8 @@ import Select from 'react-select'
 
 import { useCountries } from '@/app/hooks';
 import React, { ChangeEventHandler } from 'react';
+import { Listing } from '@/types/interfaces';
+import { setPriority } from 'os';
 
 export type CountrySelectValue = {
   flag: string;
@@ -14,18 +16,27 @@ export type CountrySelectValue = {
 }
 
 interface CountrySelectProps {
-  value?: CountrySelectValue;
-  onChange: ChangeEventHandler<HTMLSelectElement>
+  value?: string
+  setPropertyInfo: React.Dispatch<React.SetStateAction<Listing>>
+  propertyInfo: Listing
+
 }
 
 const CountrySelect: React.FC<CountrySelectProps> = ({
   value,
-  onChange
+  setPropertyInfo,
+  propertyInfo
+
 }) => {
   const { getAll, countries } = useCountries();
 
-  return <select onChange={onChange} className="select">
-          {countries.map((item) => (<option>{`${item.name.common}` }</option>))}
+  return <select 
+          value={value} 
+          placeholder='Anywhere' 
+          name='location' 
+          onChange={() => setPropertyInfo(prevInfo => ({...prevInfo, location: {...propertyInfo.location, value}}))} 
+          className="select">
+          {countries.map((item) => (<option>{item.flag}{`${item.name.common}` }</option>))}
         </select>
 }
  

@@ -93,7 +93,8 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       label="Add your property"/>
                       <CountrySelect 
                       value={propertyInfo?.location}  
-                      onChange={() => handleAddProperty}/>
+                      setPropertyInfo={setPropertyInfo}
+                      propertyInfo={propertyInfo}/>
                     </div>
     )
   }
