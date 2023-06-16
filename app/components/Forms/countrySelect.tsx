@@ -3,6 +3,7 @@
 import Select from 'react-select'
 
 import { useCountries } from '@/app/hooks';
+import React, { ChangeEventHandler } from 'react';
 
 export type CountrySelectValue = {
   flag: string;
@@ -14,17 +15,17 @@ export type CountrySelectValue = {
 
 interface CountrySelectProps {
   value?: CountrySelectValue;
-  onChange: (value: CountrySelectValue) => void;
+  onChange: ChangeEventHandler<HTMLSelectElement>
 }
 
 const CountrySelect: React.FC<CountrySelectProps> = ({
   value,
   onChange
 }) => {
-  const { getAll } = useCountries();
+  const { getAll, countries } = useCountries();
 
-  return <select className="select">
-          {getAll.name}
+  return <select onChange={onChange} className="select">
+          {countries.map((item) => (<option>{`${item.name}`}</option>))}
         </select>
 }
  

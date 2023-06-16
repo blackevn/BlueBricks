@@ -17,7 +17,8 @@ const useCountries = () => {
 
   return {
     getAll,
-    getByValue
+    getByValue,
+    countries
   }
 };
 
