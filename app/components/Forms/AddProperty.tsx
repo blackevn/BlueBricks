@@ -139,8 +139,8 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   }
 
 
-  return <div className="p-4 lg:p-6 space-y-4 lg:min-w-[800px] lg:min-h-[700px]">
-            <div className="p-4">
+  return <div className="p-4 lg:p-6 space-y-4 ">
+            <div className="p-4 lg:min-w-[800px] lg:min-h-[700px] grid place-items-center">
 
               {bodyContent}
 
