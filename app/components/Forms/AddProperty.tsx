@@ -92,9 +92,9 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       title="Location"
                       label="Add your property"/>
                       <CountrySelect 
-                      value={propertyInfo?.location}  
-                      setPropertyInfo={setPropertyInfo}
-                      propertyInfo={propertyInfo}/>
+                      value={propertyInfo.location} 
+                      onChange={(value: any) => setPropertyInfo({...propertyInfo, location: value})} 
+                    />
                     </div>
     )
   }
