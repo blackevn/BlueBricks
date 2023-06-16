@@ -5,7 +5,7 @@ const useAddProperty = () => {
 
     const initialListingInfo: Listing = {
       category: '',
-      location: {},
+      location: '',
       guestCount: 1,
       roomCount: 1,
       bathroomCount: 1,
