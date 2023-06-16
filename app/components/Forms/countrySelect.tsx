@@ -43,7 +43,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
             </div>
           </div>
         )}
-        className=''
+        className='bg-backgroundPrimary'
         theme={(theme) => ({
           ...theme,
           borderRadius: 15,
