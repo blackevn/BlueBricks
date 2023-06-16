@@ -43,11 +43,10 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
             </div>
           </div>
         )}
-        className='bg-backgroundPrimary'
+        className='select'
         classNames={{
           option: () => 'bg-[#161616] ',
           container: () => 'bg-[#161616]',
-          input: () => 'bg-[#161616]',
           control: () => 'bg-[#161616]',
           group: () => 'bg-[#161616]',
           menu: () => 'bg-[#161616]',
