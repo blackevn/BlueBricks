@@ -5,7 +5,7 @@ const useAddProperty = () => {
 
     const initialListingInfo: Listing = {
       category: '',
-      location: null,
+      location: {},
       guestCount: 1,
       roomCount: 1,
       bathroomCount: 1,
@@ -16,8 +16,17 @@ const useAddProperty = () => {
     }
 
     const [ propertyInfo, setPropertyInfo ] = useState<Listing>(initialListingInfo)
+
+    const handleAddProperty = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value, type, name, checked} = e.target
+      const newValue = type === "checkbox" ? checked : value;
+      setPropertyInfo((prevData) => ({
+      ...prevData,
+      [name]: newValue,
+      }))
+  }
    
-  return {propertyInfo, setPropertyInfo}
+  return {propertyInfo, setPropertyInfo, handleAddProperty}
 };
 
 export default useAddProperty;

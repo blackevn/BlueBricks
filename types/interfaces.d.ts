@@ -145,7 +145,7 @@ export interface ContextData {
     bathroomCount?: number
     guestCount?: number
     locationValue?: string
-    location?: string | null
+    location?: any
     userId?: string
     price?: number
   

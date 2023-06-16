@@ -9,6 +9,7 @@ import { useAddProperty, useLinks } from "@/app/hooks";
 import { useGeneralContext } from "@/app/context/AppContext";
 import CategoryItem from "./categoryItem";
 import { Listing } from "@prisma/client";
+import CountrySelect, { CountrySelectValue } from "./countrySelect";
 
 enum STEPS {
   CATEGORY = 0,
@@ -39,7 +40,7 @@ const Heading: React.FC<Props> = ({ label, title }) => {
 const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const { categories } = useLinks()
-  const { propertyInfo, setPropertyInfo } = useAddProperty()
+  const { propertyInfo, setPropertyInfo, handleAddProperty } = useAddProperty()
   const [step, setStep] = useState(STEPS.CATEGORY);
 
 
@@ -90,6 +91,9 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       <Heading 
                       title="Location"
                       label="Add your property"/>
+                      <CountrySelect value={propertyInfo?.location}  onChange={function (value: CountrySelectValue): void {
+                      throw new Error("Function not implemented.");
+        } }/>
                     </div>
     )
   }
