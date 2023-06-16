@@ -3,7 +3,7 @@
 import Select from 'react-select'
 
 import { useCountries } from '@/app/hooks';
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, useCallback } from 'react';
 import { Listing } from '@/types/interfaces';
 import { setPriority } from 'os';
 
@@ -30,17 +30,19 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
 }) => {
   const { countries } = useCountries();
 
-  const handleChange = () => {
+  const handleChange = useCallback(() => {
     setPropertyInfo( ({
           ...propertyInfo, 
           location: value}))
-      }
+        
+}, [propertyInfo, value, setPropertyInfo])
 
   return <select 
+          value={value}
           onChange={handleChange} 
           className="select">
           {countries.map((item) => (
-                 <option value={item.name.common}>{item.flag}  {`${item.name.common}` }</option>
+                 <option value={`${item.name.common}`}>{item.flag}  {`${item.name.common}` }</option>
           ))}
         </select>
 }
