@@ -87,7 +87,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   if (step === STEPS.LOCATION){
     bodyContent = (
-                    <div>
+                    <div className="space-y-4">
                       <Heading 
                       title="Location"
                       label="Add your property"/>
@@ -102,7 +102,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   if (step === STEPS.INFO){
     bodyContent = (
-                    <div>
+                    <div className="space-y-4">
                       <Heading 
                       title="Information"
                       label="Add your property"/>
@@ -112,7 +112,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   if (step === STEPS.IMAGES){
     bodyContent = (
-                    <div>
+                    <div className="space-y-4">
                       <Heading 
                       title="Images"
                       label="Add your property"/>
@@ -121,7 +121,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   }
   if (step === STEPS.DESCRIPTION){
     bodyContent = (
-                    <div>
+                    <div className="space-y-4">
                       <Heading 
                       title="Description"
                       label="Add your property"/>
@@ -130,7 +130,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   }
   if (step === STEPS.PRICE){
     bodyContent = (
-                    <div>
+                    <div className="space-y-4">
                       <Heading 
                       title="Price"
                       label="Add your property"/>
@@ -139,7 +139,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   }
 
 
-  return <div className="p-4 lg:p-6 space-y-4 min-w-[70%] min-h-[60%]">
+  return <div className="p-4 lg:p-6 space-y-4 min-w-[70%]">
             <div className="p-4">
 
               {bodyContent}
