@@ -21,8 +21,8 @@ enum STEPS {
 }
 
 type Props = {
-  label: string
-  title: string 
+  label?: string
+  title?: string 
 }
 
 type AddPropertyProps = {
@@ -64,12 +64,14 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   
   console.log(step);
   
-  
+    let heading = (
+      <Heading 
+      label='Add your property'
+      title="Select Category"/>
+    )
+    
     let bodyContent = ( 
                         <div className="space-y-4">
-                        <Heading 
-                        label='Add your property'
-                        title="Select Category"/>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         { categories.map(item => (
                           <CategoryItem
@@ -86,11 +88,13 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       )
 
   if (step === STEPS.LOCATION){
+    heading = (
+      <Heading 
+      title="Location"
+      label="Add your property"/>
+    )
     bodyContent = (
                     <div className="space-y-4">
-                      <Heading 
-                      title="Location"
-                      label="Add your property"/>
                       <CountrySelect 
                       value={propertyInfo.location} 
                       onChange={(value: any) => setPropertyInfo({...propertyInfo, location: value})} 
@@ -101,45 +105,56 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
 
   if (step === STEPS.INFO){
+    heading = (
+      <Heading 
+      title="Information"
+      label="Add your property"/>
+    )
     bodyContent = (
                     <div className="space-y-4">
-                      <Heading 
-                      title="Information"
-                      label="Add your property"/>
                     </div>
     )
   }
 
   if (step === STEPS.IMAGES){
+    heading = (
+      <Heading 
+      title="Images"
+      label="Add your property"/>
+    )
     bodyContent = (
                     <div className="space-y-4">
-                      <Heading 
-                      title="Images"
-                      label="Add your property"/>
                     </div>
     )
   }
   if (step === STEPS.DESCRIPTION){
+    heading = (
+      <Heading 
+      title="Description"
+      label="Add your property"/>
+
+    )
     bodyContent = (
                     <div className="space-y-4">
-                      <Heading 
-                      title="Description"
-                      label="Add your property"/>
                     </div>
     )
   }
   if (step === STEPS.PRICE){
+    heading = ( 
+      <Heading 
+      title="Price"
+      label="Add your property"/>
+
+    )
     bodyContent = (
                     <div className="space-y-4">
-                      <Heading 
-                      title="Price"
-                      label="Add your property"/>
                     </div>
     )
   }
 
 
-  return <div className="p-4 lg:p-6 space-y-4 ">
+  return <div className="p-4 lg:p-6 space-y-4 flex flex-col justify-between">
+          {heading}
             <div className="p-4 lg:min-w-[800px] lg:min-h-[700px] grid place-items-center">
 
               {bodyContent}
