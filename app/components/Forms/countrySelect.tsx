@@ -43,7 +43,11 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
             </div>
           </div>
         )}
-        classNames={{}}
+        classNames={{
+          control: () => 'border-none bg-backgroundPrimary rounded-2xl',
+          input: () => 'bg-backgroundPrimary',
+          option: () => 'bg-backgroundPrimary'
+        }}
  
       />
     </div>
