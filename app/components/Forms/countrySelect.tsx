@@ -28,18 +28,16 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
   propertyInfo
 
 }) => {
-  const { getAll, countries } = useCountries();
+  const { countries } = useCountries();
 
   const handleChange = () => {
-    setPropertyInfo(prevInfo => ({
-          ...prevInfo, 
+    setPropertyInfo( ({
+          ...propertyInfo, 
           location: value}))
       }
 
   return <select 
-          value={value} 
-          placeholder='Anywhere' 
-          name='location' 
+          value={propertyInfo.location} 
           onChange={handleChange} 
           className="select">
           {countries.map((item) => (<option value={item.name.common}>{item.flag}  {`${item.name.common}` }</option>))}
