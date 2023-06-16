@@ -43,14 +43,10 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
             </div>
           </div>
         )}
-        classNames={{
-          control: () => 'border-none bg-[#161616] rounded-2xl',
-          input: () => 'bg-[#161616]',
-          option: () => 'bg-[#161616]'
-        }}
+        className=''
         theme={(theme) => ({
           ...theme,
-          borderRadius: 20,
+          borderRadius: 15,
           colors: {
             ...theme.colors,
             primary: '#161616',
