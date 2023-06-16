@@ -25,7 +25,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
   const { getAll, countries } = useCountries();
 
   return <select onChange={onChange} className="select">
-          {countries.map((item) => (<option>{`${item.name}`}</option>))}
+          {countries.map((item) => (<option>{`${item.name.common}` }</option>))}
         </select>
 }
  
