@@ -91,9 +91,10 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       <Heading 
                       title="Location"
                       label="Add your property"/>
-                      <CountrySelect value={propertyInfo?.location}  onChange={function (value: CountrySelectValue): void {
-                      throw new Error("Function not implemented.");
-        } }/>
+                      <CountrySelect 
+                      value={propertyInfo?.location}  
+                      onChange={() =>{
+                         handleAddProperty}}/>
                     </div>
     )
   }
