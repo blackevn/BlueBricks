@@ -26,7 +26,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
   const customStyles = {
     option: (defaultStyles: any, state: any) => ({
       ...defaultStyles,
-      color: state.isSelected ? "#161616" : "#2563EB"  ,
+      color: '#fffff'  ,
       zIndex: 99,
       width: '35vw',
       textColor: 'white',
