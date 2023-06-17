@@ -123,8 +123,8 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     bodyContent = (
                     <div className="space-y-4">
                       <Counter
-                      title="Guest"
-                      subtitle="How many guests allow at a time"
+                      title="Guests"
+                      subtitle="How many guests allowed at a time"
                       onChange={(value: any) => setPropertyInfo({...propertyInfo, roomCount: value})}
                       value={propertyInfo.roomCount}
                       />
