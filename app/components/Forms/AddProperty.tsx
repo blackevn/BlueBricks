@@ -12,6 +12,7 @@ import { Listing } from "@prisma/client";
 import CountrySelect, { CountrySelectValue } from "./countrySelect";
 import dynamic from "next/dynamic";
 import Counter from "../Counter";
+import ImageUpload from "./imageUpload";
 
 enum STEPS {
   CATEGORY = 0,
@@ -154,6 +155,10 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     )
     bodyContent = (
                     <div className="space-y-4">
+                      <ImageUpload
+                      onChange={(value: any) => setPropertyInfo({...propertyInfo, imageSrc: value})}
+                      value={propertyInfo.imageSrc}
+                      />
                     </div>
     )
   }

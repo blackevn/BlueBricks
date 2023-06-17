@@ -137,9 +137,9 @@ export interface ContextData {
   export  type Listing = {
 
     id?: number
-    title?: String
+    title?: string
     description?: string
-    imageSrc?: String
+    imageSrc?: string
     createdAt?: string
     category?:  string
     roomCount?: number

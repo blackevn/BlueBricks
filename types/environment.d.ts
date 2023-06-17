@@ -23,5 +23,6 @@ namespace NodeJS {
       NEXTAUTH_URL: string
       MONGODB_URL: string
       NEXTAUTH_JWT_SECRET: string
+      NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: string
     }
   }
