@@ -99,7 +99,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
       label="Add your property"/>
     )
     bodyContent = (
-                    <div className="place-items-center grid gap-4 relative">
+                    <div className="place-items-center grid gap-4 relative h-[40vh]">
                       <div className="z-[99] w-full absolute top-0 ">
                       <CountrySelect 
                       value={propertyInfo.location} 
