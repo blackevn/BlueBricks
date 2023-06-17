@@ -1,4 +1,5 @@
 import { Toggle } from '@/app/components';
+import { CountrySelectValue } from '@/app/components/Forms/countrySelect';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { type } from 'os';
 import React, { FormEventHandler, ReactNode } from 'react';
@@ -145,7 +146,7 @@ export interface ContextData {
     bathroomCount?: number
     guestCount?: number
     locationValue?: string
-    location?: string
+    location?: CountrySelectValue
     userId?: string
     price?: number
   

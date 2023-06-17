@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { BsHouseAdd } from "react-icons/bs";
 import Button from "../button";
 import { IoChevronBackCircleSharp, IoChevronForwardCircleSharp } from "react-icons/io5";
@@ -10,6 +10,7 @@ import { useGeneralContext } from "@/app/context/AppContext";
 import CategoryItem from "./categoryItem";
 import { Listing } from "@prisma/client";
 import CountrySelect, { CountrySelectValue } from "./countrySelect";
+import dynamic from "next/dynamic";
 
 enum STEPS {
   CATEGORY = 0,
@@ -87,6 +88,10 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         </div>
                       )
 
+  const Map = useMemo(() => dynamic(() => import('../Map'), { 
+    ssr: false 
+  }), [propertyInfo.location]);
+
   if (step === STEPS.LOCATION){
     heading = (
       <Heading 
@@ -99,6 +104,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       value={propertyInfo.location} 
                       onChange={(value: any) => setPropertyInfo({...propertyInfo, location: value})} 
                     />
+                    <Map center={propertyInfo.location?.latlng}/>
                     </div>
     )
   }
