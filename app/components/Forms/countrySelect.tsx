@@ -51,6 +51,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
           group: () => 'bg-[#161616] border-none',
           menu: () => 'bg-[#161616] border-none',
           menuList: () => 'bg-[#161616] border-none',
+          input: () => 'border-none bg-none'
         }}
         theme={(theme) => ({
           ...theme,
