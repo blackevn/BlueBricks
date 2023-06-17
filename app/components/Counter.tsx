@@ -29,16 +29,16 @@ const Counter: React.FC<CounterProps> = ({
   }, [onChange, value]);
 
   return <>
-            <div className="flex w-full items-center">
-              <div className="space-y-2">
-                <h1  className="text-xl">{title}</h1>
-                <h1>{subtitle}</h1>
+            <div className="flex items-center w-[35vw]">
+              <div className="space-x-1">
+                <h1  className="text-xl font-medium">{title}</h1>
+                <h1 className="text-[12px]">{subtitle}</h1>
               </div>
-              <div className="flex gap-4 items-center">
+              <div className="flex gap-4 items-center lg:text-xl">
                 <AiFillMinusCircle
                 onClick={onReduce}
                 />
-                <h1 className="text-xl">{value}</h1>
+                <h1 className="">{value}</h1>
                 <AiFillPlusCircle
                 onClick={onAdd}
                 />
