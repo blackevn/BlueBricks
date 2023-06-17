@@ -30,7 +30,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
       zIndex: 99,
       width: '35vw',
       textColor: 'white',
-      backgroundColor: state.isSelected ? "#161616" : "#2563EB" ,
+      backgroundColor: "#161616" ,
     }),
     input: () => ({
       width: '35vw'
