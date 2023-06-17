@@ -27,7 +27,7 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
                 <div className="flex w-full justify-between items-center p-4 lg:px-10">
                 <h1 className=" text-xl font-bold text-blue-600">Blue Bricks</h1>
 
-                <div className="flex items-center gap-8">
+                <div className="flex items-center gap-4 lg:gap-8">
 
           { currentUser && <Modal
                  label="Add your property"

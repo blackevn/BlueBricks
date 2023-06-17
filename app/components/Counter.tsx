@@ -29,14 +29,14 @@ const Counter: React.FC<CounterProps> = ({
   }, [onChange, value]);
 
   return ( 
-    <div className="flex flex-row items-center justify-between w-[80%]">
+    <div className="flex flex-row items-center justify-between w-ful">
       <div className="flex flex-col">
-        <div className="font-medium">{title}</div>
-        <div className="font-light text-gray-600">
+        <div className="">{title}</div>
+        <div className=" text-sm">
           {subtitle}
         </div>
       </div>
-      <div className="flex flex-row items-center gap-4">
+      <div className="flex flex-row items-center gap-4 w-full">
         <div
           onClick={onReduce}
           className="
