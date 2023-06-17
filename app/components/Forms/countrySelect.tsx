@@ -27,15 +27,18 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
     option: (defaultStyles: any, state: any) => ({
       ...defaultStyles,
       color: state.isSelected ? "#212529" : "#fff",
-      backgroundColor: state.isSelected ? "#a0a0a0" : "#008080",
+      zIndex: 99,
+      backgroundColor: state.isSelected ? "#2563EB" : "#008080",
     }),
 
     control: (defaultStyles: any) => ({
       ...defaultStyles,
-      backgroundColor: "#008080",
-      padding: "8px",
+      backgroundColor: "#161616",
+      padding: "1em",
       border: "none",
+      borderRadius: '1em',
       boxShadow: "none",
+      zIndex: 99
     }),
     singleValue: (defaultStyles: any) => ({ ...defaultStyles, color: "#fff" }),
   };
