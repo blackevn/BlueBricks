@@ -11,6 +11,7 @@ import CategoryItem from "./categoryItem";
 import { Listing } from "@prisma/client";
 import CountrySelect, { CountrySelectValue } from "./countrySelect";
 import dynamic from "next/dynamic";
+import Counter from "../Counter";
 
 enum STEPS {
   CATEGORY = 0,
@@ -31,6 +32,7 @@ type AddPropertyProps = {
 }
 
 const Heading: React.FC<Props> = ({ label, title }) => {
+
   return <div className="space-y-4">
           <h1 className="flex items-center gap-2 text-xl font-bold"><BsHouseAdd/><span>{label}</span></h1>
           <h1 className="text-lg font-bold">{title}</h1>
@@ -42,7 +44,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const { categories } = useLinks()
   const { propertyInfo, setPropertyInfo, handleAddProperty } = useAddProperty()
-  const [step, setStep] = useState(STEPS.CATEGORY);
+  const [ step, setStep ] = useState(STEPS.CATEGORY);
 
 
   console.log(propertyInfo);
@@ -120,6 +122,12 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     )
     bodyContent = (
                     <div className="space-y-4">
+                      <Counter
+                      title="Guest"
+                      subtitle="How many guests allow at a time"
+                      onChange={(value: any) => setPropertyInfo({...propertyInfo, roomCount: value})}
+                      value={propertyInfo.roomCount}
+                      />
                     </div>
     )
   }
