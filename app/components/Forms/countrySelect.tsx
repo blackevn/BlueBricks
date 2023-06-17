@@ -43,7 +43,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
       zIndex: 99,
       width: '35vw'
     }),
-    singleValue: (defaultStyles: any) => ({ ...defaultStyles, color: "#2563EB" }),
+    singleValue: (defaultStyles: any) => ({ ...defaultStyles, color: "#ffffff" }),
   };
 
   return ( 
