@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback } from "react";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 
 interface CounterProps {
   title: string;
@@ -28,65 +28,23 @@ const Counter: React.FC<CounterProps> = ({
     onChange(value ? value - 1 : 1);
   }, [onChange, value]);
 
-  return ( 
-    <div className="flex flex-row items-center justify-between w-ful">
-      <div className="flex flex-col">
-        <div className="">{title}</div>
-        <div className=" text-sm">
-          {subtitle}
-        </div>
-      </div>
-      <div className="flex flex-row items-center gap-4 w-full">
-        <div
-          onClick={onReduce}
-          className="
-            w-10
-            h-10
-            rounded-full
-            border-[1px]
-            border-neutral-400
-            flex
-            items-center
-            justify-center
-            text-neutral-600
-            cursor-pointer
-            hover:opacity-80
-            transition
-          "
-        >
-          <AiOutlineMinus />
-        </div>
-        <div 
-          className="
-            font-light 
-            text-xl 
-            text-neutral-600
-          "
-        >
-            {value}
-          </div>
-        <div
-          onClick={onAdd}
-          className="
-            w-10
-            h-10
-            rounded-full
-            border-[1px]
-            border-neutral-400
-            flex
-            items-center
-            justify-center
-            text-neutral-600
-            cursor-pointer
-            hover:opacity-80
-            transition
-          "
-        >
-          <AiOutlinePlus />
-        </div>
-      </div>
-    </div>
-   );
+  return <>
+            <div className="flex w-full items-center">
+              <div className="space-y-2">
+                <h1  className="text-xl">{title}</h1>
+                <h1>{subtitle}</h1>
+              </div>
+              <div className="flex gap-4 items-center">
+                <AiFillMinusCircle
+                onClick={onReduce}
+                />
+                <h1 className="text-xl">{value}</h1>
+                <AiFillPlusCircle
+                onClick={onAdd}
+                />
+              </div>
+            </div>
+        </>
 }
  
 export default Counter;
