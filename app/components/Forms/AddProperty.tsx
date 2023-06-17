@@ -99,11 +99,13 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
       label="Add your property"/>
     )
     bodyContent = (
-                    <div className="space-y-4">
+                    <div className="place-items-center grid gap-4">
+                      <div className="z-[99]">
                       <CountrySelect 
                       value={propertyInfo.location} 
                       onChange={(value: any) => setPropertyInfo({...propertyInfo, location: value})} 
-                    />
+                      />
+                      </div>
                     <Map center={propertyInfo.location?.latlng}/>
                     </div>
     )
