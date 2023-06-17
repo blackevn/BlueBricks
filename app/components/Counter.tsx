@@ -32,7 +32,7 @@ const Counter: React.FC<CounterProps> = ({
             <div className="flex items-center w-[60vw] lg:w-[45vw] justify-between">
               <div className="space-x-1">
                 <h1  className="text-xl font-medium p-0 m-0">{title}</h1>
-                <h1 className="text-[12px] p-0 m-0">{subtitle}</h1>
+                <h1 className="text-[12px] p-0 m-0 hidden md:block">{subtitle}</h1>
               </div>
               <div className="flex gap-4 items-center lg:text-xl">
                 <AiFillMinusCircle
