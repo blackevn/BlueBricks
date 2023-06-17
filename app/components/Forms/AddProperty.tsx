@@ -128,14 +128,14 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       onChange={(value: any) => setPropertyInfo({...propertyInfo, roomCount: value})}
                       value={propertyInfo.roomCount}
                       />
-                      <hr/>
+                      <hr className="text-gray-2"/>
                       <Counter
                       title="Bathrooms"
                       subtitle="How many bathrooms does your property have?"
                       onChange={(value: any) => setPropertyInfo({...propertyInfo, bathroomCount: value})}
                       value={propertyInfo.bathroomCount}
                       />
-                      <hr/>
+                      <hr className="text-gray-2"/>
                       <Counter
                       title="Rooms"
                       subtitle="How many rooms does your property have?"
