@@ -159,7 +159,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   }
 
 
-  return <div className="p-4 lg:p-6 space-y-4 flex flex-col justify-between lg:min-h-[400px]">
+  return <div className="p-4 lg:p-6 space-y-4 flex flex-col justify-between lg:min-h-[50vw]">
           {heading}
             <div className="p-4 lg:min-w-[700px] grid place-items-center">
 
