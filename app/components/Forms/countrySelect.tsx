@@ -26,21 +26,22 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
   const customStyles = {
     option: (defaultStyles: any, state: any) => ({
       ...defaultStyles,
-      color: state.isSelected ? "#212529" : "#fff",
+      color: state.isSelected ? "#2563EB" : "#161616",
       zIndex: 99,
-      backgroundColor: state.isSelected ? "#2563EB" : "#008080",
+      width: '100%',
+      backgroundColor: state.isSelected ? "#2563EB" : "#161616",
     }),
 
     control: (defaultStyles: any) => ({
       ...defaultStyles,
       backgroundColor: "#161616",
-      padding: "1em",
       border: "none",
       borderRadius: '1em',
       boxShadow: "none",
-      zIndex: 99
+      zIndex: 99,
+      width: '100%'
     }),
-    singleValue: (defaultStyles: any) => ({ ...defaultStyles, color: "#fff" }),
+    singleValue: (defaultStyles: any) => ({ ...defaultStyles, color: "#2563EB" }),
   };
 
   return ( 
