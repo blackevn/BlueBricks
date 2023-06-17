@@ -169,7 +169,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   }
 
 
-  return <div className="p-4 lg:p-6 space-y-4 flex flex-col justify-between lg:min-h-[45vh] ">
+  return <div className="p-4 lg:p-6 space-y-4 flex flex-col justify-between w-[85vw] lg:min-h-[45vh] ">
 
           {heading}
     

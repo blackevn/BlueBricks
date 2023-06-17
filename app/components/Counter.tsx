@@ -29,7 +29,7 @@ const Counter: React.FC<CounterProps> = ({
   }, [onChange, value]);
 
   return <>
-            <div className="flex items-center w-[35vw] justify-between">
+            <div className="flex items-center lgw-[35vw] justify-between">
               <div className="space-x-1">
                 <h1  className="text-xl font-medium p-0 m-0">{title}</h1>
                 <h1 className="text-[12px] p-0 m-0">{subtitle}</h1>
