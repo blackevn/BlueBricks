@@ -23,9 +23,27 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
 }) => {
   const { getAll } = useCountries();
 
+  const customStyles = {
+    option: (defaultStyles: any, state: any) => ({
+      ...defaultStyles,
+      color: state.isSelected ? "#212529" : "#fff",
+      backgroundColor: state.isSelected ? "#a0a0a0" : "#008080",
+    }),
+
+    control: (defaultStyles: any) => ({
+      ...defaultStyles,
+      backgroundColor: "#008080",
+      padding: "8px",
+      border: "none",
+      boxShadow: "none",
+    }),
+    singleValue: (defaultStyles: any) => ({ ...defaultStyles, color: "#fff" }),
+  };
+
   return ( 
     <div>
       <Select
+       styles={customStyles}
         placeholder="Anywhere"
         isClearable
         options={getAll()}
@@ -43,19 +61,9 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
             </div>
           </div>
         )}
-        className='select z-[999]'
- 
-        theme={(theme) => ({
-          ...theme,
-          borderRadius: 12,
-          backgroundColor: '#161616',
-          colors: {
-            ...theme.colors,
-            primary: '#161616',
-            primary25: '#161616 '
-          }
-        })}
-      />
+        className=' z-[999]'
+        
+         />
     </div>
    );
 }

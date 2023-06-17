@@ -100,7 +100,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     )
     bodyContent = (
                     <div className="place-items-center grid gap-4 relative h-[40vh]">
-                      <div className="z-[99] w-full absolute top-0 ">
+                      <div className="z-[99] w-full absolute top-0 grid place-items-center">
                       <CountrySelect 
                       value={propertyInfo.location} 
                       onChange={(value: any) => setPropertyInfo({...propertyInfo, location: value})} 
