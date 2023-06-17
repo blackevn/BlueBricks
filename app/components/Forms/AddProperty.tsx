@@ -99,8 +99,8 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
       label="Add your property"/>
     )
     bodyContent = (
-                    <div className="place-items-center grid gap-4">
-                      <div className="z-[99]">
+                    <div className="place-items-center grid gap-4 relative">
+                      <div className="z-[99] w-full absolute">
                       <CountrySelect 
                       value={propertyInfo.location} 
                       onChange={(value: any) => setPropertyInfo({...propertyInfo, location: value})} 
@@ -162,7 +162,9 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
 
   return <div className="p-4 lg:p-6 space-y-4 flex flex-col justify-between lg:min-h-[40vw]">
+
           {heading}
+    
             <div className="p-4 lg:min-w-[55vw] grid place-items-center">
 
               {bodyContent}
