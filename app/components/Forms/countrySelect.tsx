@@ -49,7 +49,8 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
   return ( 
     <div>
       <Select
-       styles={customStyles}
+        menuPlacement="top"
+        styles={customStyles}
         placeholder="Anywhere"
         isClearable
         options={getAll()}
