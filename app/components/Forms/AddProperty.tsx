@@ -45,9 +45,9 @@ const Heading: React.FC<Props> = ({ label, title }) => {
 const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const { categories } = useLinks()
+  const [mapLoaded, setMapLoaded] = useState(false);
   const { propertyInfo, setPropertyInfo, handleAddProperty } = useAddProperty()
   const [ step, setStep ] = useState(STEPS.CATEGORY);
-  const [mapLoaded, setMapLoaded] = useState(false);
 
 
   console.log(propertyInfo);
