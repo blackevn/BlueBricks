@@ -100,7 +100,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
         return LoadedMap;
       };
       return dynamic(() => loadMap(), { ssr: false });
-    }, [propertyInfo.location]);
+    }, [propertyInfo, step, mapLoaded]);
 
   if (step === STEPS.LOCATION){
     heading = (
