@@ -104,7 +104,9 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     )
     bodyContent = (
                     <div>
-                      { Map ? <div className="place-items-center grid gap-4 relative h-[40vh]">
+                      { useMemo(() => dynamic(() => import('../Map'), { 
+                          ssr: false 
+                        }), [propertyInfo.location]) ? <div className="place-items-center grid gap-4 relative h-[40vh]">
                          <div className="z-[99] w-full absolute top-0 grid place-items-center">
                          <CountrySelect 
                          value={propertyInfo.location} 
