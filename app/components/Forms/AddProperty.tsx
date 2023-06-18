@@ -47,6 +47,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   const { categories } = useLinks()
   const { propertyInfo, setPropertyInfo, handleAddProperty } = useAddProperty()
   const [ step, setStep ] = useState(STEPS.CATEGORY);
+  const [mapLoaded, setMapLoaded] = useState(false);
 
 
   console.log(propertyInfo);
@@ -92,9 +93,14 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         </div>
                       )
 
-  const Map = useMemo(() => dynamic(() => import('../Map'), { 
-    ssr: false 
-  }), [propertyInfo.location]);
+    const Map = useMemo(() => {
+      const loadMap = async () => {
+        const { default: LoadedMap } = await import('../Map');
+        setMapLoaded(true);
+        return LoadedMap;
+      };
+      return dynamic(() => loadMap(), { ssr: false });
+    }, [propertyInfo.location]);
 
   if (step === STEPS.LOCATION){
     heading = (
@@ -103,8 +109,9 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
       label="Add your property"/>
     )
     bodyContent = (
-                    <div>
-                      { propertyInfo.location ? <div className="place-items-center grid gap-4 relative h-[40vh]">
+                  <div>
+
+                  {mapLoaded ? <div className="place-items-center grid gap-4 relative h-[40vh]">
                          <div className="z-[99] w-full absolute top-0 grid place-items-center">
                          <CountrySelect 
                          value={propertyInfo.location} 
@@ -112,8 +119,9 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                          />
                          </div>
                          <Map center={propertyInfo.location?.latlng}/>
-                       </div> : <Loading/>}
+                       </div> : <Loading/> }
                     </div>
+                    
     )
   }
 
