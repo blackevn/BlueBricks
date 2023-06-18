@@ -13,6 +13,7 @@ import CountrySelect, { CountrySelectValue } from "./countrySelect";
 import dynamic from "next/dynamic";
 import Counter from "../Counter";
 import ImageUpload from "./imageUpload";
+import Loading from "../Loading/loading";
 
 enum STEPS {
   CATEGORY = 0,
@@ -102,14 +103,16 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
       label="Add your property"/>
     )
     bodyContent = (
-                    <div className="place-items-center grid gap-4 relative h-[40vh]">
-                      <div className="z-[99] w-full absolute top-0 grid place-items-center">
-                      <CountrySelect 
-                      value={propertyInfo.location} 
-                      onChange={(value: any) => setPropertyInfo({...propertyInfo, location: value})} 
-                      />
-                      </div>
-                    <Map center={propertyInfo.location?.latlng}/>
+                    <div>
+                      { Map ? <div className="place-items-center grid gap-4 relative h-[40vh]">
+                         <div className="z-[99] w-full absolute top-0 grid place-items-center">
+                         <CountrySelect 
+                         value={propertyInfo.location} 
+                         onChange={(value: any) => setPropertyInfo({...propertyInfo, location: value})} 
+                         />
+                         </div>
+                         <Map center={propertyInfo.location?.latlng}/>
+                       </div> : <Loading/>}
                     </div>
     )
   }
