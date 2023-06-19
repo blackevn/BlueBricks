@@ -70,28 +70,36 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   
   console.log(step);
   
-    let heading = (
-      <Heading 
-      label='Add your property'
-      title="Select Category"/>
-    )
+    let heading = <></>
+    let bodyContent = <></>
+
+    if (step === STEPS.CATEGORY){
+
+      heading = (
+        <Heading 
+        label='Add your property'
+        title="Select Category"/>
+      )
+
+      bodyContent = ( 
+                          <div className="space-y-4">
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          { categories.map(item => (
+                            <CategoryItem
+                             selected={propertyInfo.category === item.name}
+                             icon={item.icon}
+                             name={item.name}
+                             key={item.id}
+                             propertyInfo={propertyInfo}
+                             setPropertyInfo={setPropertyInfo}
+                            />
+                          ))}
+                          </div>
+                          </div>
+                        )
+
+    }
     
-    let bodyContent = ( 
-                        <div className="space-y-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        { categories.map(item => (
-                          <CategoryItem
-                           selected={propertyInfo.category === item.name}
-                           icon={item.icon}
-                           name={item.name}
-                           key={item.id}
-                           propertyInfo={propertyInfo}
-                           setPropertyInfo={setPropertyInfo}
-                          />
-                        ))}
-                        </div>
-                        </div>
-                      )
 
     const Map = useMemo(() => dynamic(() => import('../Map'), { 
       ssr: false 
@@ -99,8 +107,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
 
   if (step === STEPS.LOCATION){
-
-      
+     
     heading = (
       <Heading 
       title="Location"
