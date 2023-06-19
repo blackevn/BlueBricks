@@ -49,6 +49,9 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   const { propertyInfo, setPropertyInfo, handleAddProperty } = useAddProperty()
   const [ step, setStep ] = useState(STEPS.CATEGORY);
 
+ if( step !== STEPS.LOCATION) {
+  setMapLoaded(false)
+ }
 
   console.log(propertyInfo);
   
