@@ -99,11 +99,12 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   
 
   if (step === STEPS.LOCATION){
-
-    setTimeout(() => {
-      setMapLoaded( prev => !prev)
-    }, 3000)
-
+    useEffect(() => {
+      setTimeout(() => {
+        setMapLoaded( prev => !prev)
+      }, 3000)
+      
+    }, [mapLoaded])
     
     heading = (
       <Heading 
