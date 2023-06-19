@@ -100,6 +100,10 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   if (step === STEPS.LOCATION){
 
+    setTimeout(() => {
+      setMapLoaded( prev => !prev)
+    }, 3000)
+
     
     heading = (
       <Heading 
@@ -109,7 +113,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     bodyContent = (
                   <div>
 
-                  {mapLoaded ? <div className="place-items-center grid gap-4 relative h-[40vh]">
+                  { mapLoaded ? <div className="place-items-center grid gap-4 relative h-[40vh]">
                          <div className="z-[99] w-full absolute top-0 grid place-items-center">
                          <CountrySelect 
                          value={propertyInfo.location} 
@@ -121,6 +125,8 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                     </div>
                     
     )
+  } else {
+    setMapLoaded( prev => !prev)
   }
 
 
