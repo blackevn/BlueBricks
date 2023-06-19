@@ -218,7 +218,8 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
     )
     bodyContent = (
-                    <div className="space-y-4 ">
+                    <div className="space-y-4 flex items-center gap-2">
+                      <h1>$</h1>
                       <Input
                       type="number"
                       onChange={handleAddProperty}
