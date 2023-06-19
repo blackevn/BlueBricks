@@ -96,16 +96,17 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     const Map = useMemo(() => dynamic(() => import('../Map'), { 
       ssr: false 
     }), [location]);
-  
+
+    
+    if (step === 1){
+      setMapLoaded(true)
+    } else {
+      setMapLoaded(false)
+    }
 
   if (step === STEPS.LOCATION){
-    useEffect(() => {
-      setTimeout(() => {
-        setMapLoaded( prev => !prev)
-      }, 3000)
-      
-    }, [mapLoaded])
-    
+
+        
     heading = (
       <Heading 
       title="Location"
@@ -126,8 +127,6 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                     </div>
                     
     )
-  } else {
-    setMapLoaded( prev => !prev)
   }
 
 
