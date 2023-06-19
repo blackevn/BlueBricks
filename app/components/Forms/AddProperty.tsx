@@ -195,6 +195,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       placeholder="Title"
                       icon={MdTitle}
                       name="title"
+                      modifier="input authInput"
 
                       />
                       <Input
@@ -204,6 +205,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       placeholder="Description"
                       icon={LuSubtitles}
                       name="description"
+                      modifier="input authInput"
                       />
                     </div>
     )
@@ -224,6 +226,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       placeholder="Price"
                       icon={LuSubtitles}
                       name="price"
+                      modifier="input authInput"
                       />
                     </div>
     )
