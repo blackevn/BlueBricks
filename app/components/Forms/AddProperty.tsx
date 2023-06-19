@@ -93,10 +93,6 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         </div>
                       )
 
-  if( step !== STEPS.LOCATION) {
-    setMapLoaded(false)
-    }
-  
    const Map = useMemo(() => {
       const loadMap = async () => {
         const { default: LoadedMap } = await import('../Map');
