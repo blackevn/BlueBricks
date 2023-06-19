@@ -51,10 +51,6 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
  
   console.log(propertyInfo);
-
-  if (step === 1){
-    setMapLoaded(false)
-  }
   
   const onBack = () => {
     if( step === STEPS.CATEGORY){
@@ -97,21 +93,14 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         </div>
                       )
 
-   const Map = useMemo(() => {
-      const loadMap = async () => {
-        const { default: LoadedMap } = await import('../Map');
-        setMapLoaded(true);
-        return LoadedMap;
-      };
-      return dynamic(() => loadMap(), { ssr: false });
-    }, [propertyInfo, step, mapLoaded]);
+    const Map = useMemo(() => dynamic(() => import('../Map'), { 
+      ssr: false 
+    }), [location]);
+  
 
   if (step === STEPS.LOCATION){
 
-    setTimeout(() => {
-      setMapLoaded(true);
-    }, 3000)
-
+    
     heading = (
       <Heading 
       title="Location"
