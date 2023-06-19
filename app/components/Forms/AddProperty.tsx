@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { BsHouseAdd } from "react-icons/bs";
 import Button from "../button";
 import { IoChevronBackCircleSharp, IoChevronForwardCircleSharp } from "react-icons/io5";
@@ -93,7 +93,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                         </div>
                       )
 
-    const Map = useMemo(() => {
+   const Map = useMemo(() => {
       const loadMap = async () => {
         const { default: LoadedMap } = await import('../Map');
         setMapLoaded(true);
@@ -103,6 +103,11 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     }, [propertyInfo, step, mapLoaded]);
 
   if (step === STEPS.LOCATION){
+
+    setTimeout(() => {
+      setMapLoaded(true);
+    }, 3000)
+
     heading = (
       <Heading 
       title="Location"
