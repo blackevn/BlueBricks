@@ -218,8 +218,10 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
     )
     bodyContent = (
-                    <div className="space-y-4 flex items-center gap-2">
-                      <h1>$</h1>
+                      <div className="space-y-4">
+
+                      <div className="flex items-center gap-2">
+                      <h1 className="font-bold">$</h1>
                       <Input
                       type="number"
                       onChange={handleAddProperty}
@@ -230,6 +232,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       modifier="input authInput w-[60vw] lg:w-[45vw]"
                       iconModifier="hidden"
                       />
+                      </div>
                     </div>
     )
   }
