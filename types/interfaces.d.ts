@@ -64,6 +64,7 @@ export type InputProps = {
   icon: IconType
   iconModifier?: string
   onClick?: ClickEvent
+  orientation?: string
 }
 
 

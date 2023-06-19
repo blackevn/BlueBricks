@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { BsHouseAdd } from "react-icons/bs";
 import Button from "../button";
 import { IoChevronBackCircleSharp, IoChevronForwardCircleSharp } from "react-icons/io5";
-import Input from "../input";
+import Input from "./input";
 import { useAddProperty, useLinks } from "@/app/hooks";
 import { useGeneralContext } from "@/app/context/AppContext";
 import CategoryItem from "./categoryItem";
@@ -219,7 +219,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     )
     bodyContent = (
                     <div className="space-y-4">
-                                            <Input
+                      <Input
                       type="number"
                       onChange={handleAddProperty}
                       value={propertyInfo.price}

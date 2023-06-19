@@ -1,7 +1,7 @@
 'use client'
 
 import Button from "../button";
-import Input from "../input";
+import Input from "./input";
 import { useAuthForm } from "@/app/hooks";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc"

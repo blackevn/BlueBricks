@@ -1,7 +1,7 @@
 'use client'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useGeneralContext } from "../context/AppContext"
+import { useGeneralContext } from "../../context/AppContext"
 import { InputProps } from "@/types/interfaces"
 import { faAt, faIcons } from "@fortawesome/free-solid-svg-icons"
 
@@ -22,13 +22,13 @@ const Input: React.FC<InputProps> = (props) => {
            hidden, 
            onFocus,
            icon: Icon,
-           iconModifier, onClick } = props
+           iconModifier, onClick, orientation } = props
 
   return (
 
     <>
 
-    <div className="form-control relative w-full">
+    <div className={`form-control relative w-full ${orientation}`}>
         <input
         hidden={hidden}
         ref={ref}

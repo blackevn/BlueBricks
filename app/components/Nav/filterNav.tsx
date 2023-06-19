@@ -8,7 +8,7 @@ import { IoClose } from 'react-icons/io5'
 import { HiArchive, HiAdjustments } from 'react-icons/hi'
 import { HiOutlineXMark } from 'react-icons/hi2'
 import { motion } from "framer-motion"
-import Input from "../input"
+import Input from "../Forms/input"
 import { useSearchParams } from "next/navigation"
 import CategoriesSlide from "./categoriesSlide"
 
