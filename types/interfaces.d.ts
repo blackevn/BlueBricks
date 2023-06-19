@@ -51,7 +51,7 @@ export type FormAuthData = {
 export type InputProps = {
   type: string
   name: string 
-  value: string
+  value: string | undefined | number
   id?: string
   onChange?: FormEventHandler
   onFocus?: FormEventHandler

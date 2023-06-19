@@ -14,6 +14,8 @@ import dynamic from "next/dynamic";
 import Counter from "../Counter";
 import ImageUpload from "./imageUpload";
 import Loading from "../Loading/loading";
+import { MdTitle } from "react-icons/md";
+import { LuSubtitles } from "react-icons/lu";
 
 enum STEPS {
   CATEGORY = 0,
@@ -186,6 +188,23 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     )
     bodyContent = (
                     <div className="space-y-4">
+                      <Input
+                      type="text"
+                      onChange={handleAddProperty}
+                      value={propertyInfo.title}
+                      placeholder="Title"
+                      icon={MdTitle}
+                      name="title"
+
+                      />
+                      <Input
+                      type="text"
+                      onChange={handleAddProperty}
+                      value={propertyInfo.description}
+                      placeholder="Description"
+                      icon={LuSubtitles}
+                      name="description"
+                      />
                     </div>
     )
   }
@@ -198,6 +217,14 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     )
     bodyContent = (
                     <div className="space-y-4">
+                                            <Input
+                      type="number"
+                      onChange={handleAddProperty}
+                      value={propertyInfo.price}
+                      placeholder="Price"
+                      icon={LuSubtitles}
+                      name="price"
+                      />
                     </div>
     )
   }
