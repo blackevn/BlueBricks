@@ -218,7 +218,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
     )
     bodyContent = (
-                    <div className="space-y-4">
+                    <div className="space-y-4 ">
                       <Input
                       type="number"
                       onChange={handleAddProperty}
@@ -227,6 +227,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       icon={LuSubtitles}
                       name="price"
                       modifier="input authInput w-[60vw] lg:w-[45vw]"
+                      orientation="flex flex-row-reverse"
                       />
                     </div>
     )
