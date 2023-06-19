@@ -51,6 +51,10 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
  
   console.log(propertyInfo);
+
+  if (step === 1){
+    setMapLoaded(false)
+  }
   
   const onBack = () => {
     if( step === STEPS.CATEGORY){
