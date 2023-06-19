@@ -227,7 +227,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
                       icon={LuSubtitles}
                       name="price"
                       modifier="input authInput w-[60vw] lg:w-[45vw]"
-                      orientation="flex flex-row-reverse"
+                      orientation="flex flex-row flex-row-reverse"
                       />
                     </div>
     )
