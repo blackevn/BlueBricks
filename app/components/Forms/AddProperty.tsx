@@ -45,7 +45,6 @@ const Heading: React.FC<Props> = ({ label, title }) => {
 const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const { categories } = useLinks()
-  const [mapLoaded, setMapLoaded] = useState(false);
   const { propertyInfo, setPropertyInfo, handleAddProperty } = useAddProperty()
   const [ step, setStep ] = useState(STEPS.CATEGORY);
 
@@ -103,7 +102,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
     const Map = useMemo(() => dynamic(() => import('../Map'), { 
       ssr: false 
-    }), [location]);
+    }), [propertyInfo.location]);
 
 
   if (step === STEPS.LOCATION){
