@@ -1,9 +1,13 @@
+'use client'
+
 import { Listing } from "@/types/interfaces";
 import { useState } from "react";
 import { useGeneralContext } from "../context/AppContext";
 import { toast } from "react-hot-toast";
 import { Toast } from "../components";
 import { AiFillCheckCircle } from "react-icons/ai";
+import { useRouter } from "next/navigation";
+
 
 enum STEPS {
   CATEGORY = 0,
@@ -28,7 +32,8 @@ const useAddProperty = () => {
       title: '',
       description: '',
     }
-  
+    
+    const router = useRouter()
     const [ propertyInfo, setPropertyInfo ] = useState<Listing>(initialListingInfo)
     const [ step, setStep ] = useState(STEPS.CATEGORY);
     const { setAddModalToggle } = useGeneralContext()
@@ -66,6 +71,7 @@ const useAddProperty = () => {
 
     if (step === STEPS.PRICE) {
       toast.custom(() => (<Toast text="Property added" modifier="bg-green-500 text-white" icon={AiFillCheckCircle}/>))
+      router.refresh()
     } else {
       onNext()
     }
