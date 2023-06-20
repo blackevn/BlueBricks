@@ -65,7 +65,7 @@ const useAddProperty = () => {
   const addOrNext = () => {
 
     if (step === STEPS.PRICE) {
-      onAddProperty()
+      setAddModalToggle()
     } else {
       onNext()
     }
