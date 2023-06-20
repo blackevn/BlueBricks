@@ -16,6 +16,7 @@ import ImageUpload from "./imageUpload";
 import Loading from "../Loading/loading";
 import { MdTitle } from "react-icons/md";
 import { LuSubtitles } from "react-icons/lu";
+import { AiFillCheckCircle } from "react-icons/ai";
 
 enum STEPS {
   CATEGORY = 0,
@@ -220,7 +221,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
     bodyContent = (
                       <div className="space-y-4">
 
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center">
                       <h1 className="font-bold">$</h1>
                       <Input
                       type="number"
@@ -249,7 +250,11 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
             </div>
             <div className={`flex w-full items-center  ${step === 0 ? 'justify-end' : 'justify-between'}`}>
              {step !== 0 && <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>}
-              <Button clickEvent={onNext} text="Next" modifier="btn flex-row-reverse" icon={IoChevronForwardCircleSharp}/>
+              <Button 
+              clickEvent={step === STEPS.PRICE && onNext} 
+              text={step === STEPS.PRICE ? 'Finish' : 'Next'} 
+              modifier="btn flex-row-reverse" 
+              icon={step === STEPS.PRICE ? AiFillCheckCircle : IoChevronForwardCircleSharp}/>
             </div>
         </div>
 };
