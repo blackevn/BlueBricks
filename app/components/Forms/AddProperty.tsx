@@ -18,15 +18,6 @@ import { MdTitle } from "react-icons/md";
 import { LuSubtitles } from "react-icons/lu";
 import { AiFillCheckCircle } from "react-icons/ai";
 
-enum STEPS {
-  CATEGORY = 0,
-  LOCATION = 1,
-  INFO = 2,
-  IMAGES = 3,
-  DESCRIPTION = 4,
-  PRICE = 5,
-}
-
 type Props = {
   label?: string
   title?: string 
@@ -48,27 +39,10 @@ const Heading: React.FC<Props> = ({ label, title }) => {
 const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const { categories } = useLinks()
-  const { propertyInfo, setPropertyInfo, handleAddProperty } = useAddProperty()
-  const [ step, setStep ] = useState(STEPS.CATEGORY);
-
+  const { propertyInfo, setPropertyInfo, handleAddProperty, onBack,
+          onNext, STEPS, step } = useAddProperty()
  
   console.log(propertyInfo);
-  
-  const onBack = () => {
-    if( step === STEPS.CATEGORY){
-      setStep(0)
-    } else {
-      setStep((prevValue) => prevValue - 1);
-    }
-  }
-
-  const onNext = () => {
-    if( step === STEPS.PRICE){
-      setStep(5)
-    } else {
-    setStep((prevValue) => prevValue + 1);
-  }
-  }
   
   console.log(step);
   
@@ -116,17 +90,16 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
       label="Add your property"/>
     )
     bodyContent = (
-                
-
-                      <div className="place-items-center grid gap-4 relative h-[40vh]">
-                         <div className="z-[99] w-full absolute top-0 grid place-items-center">
-                         <CountrySelect 
-                         value={propertyInfo.location} 
-                         onChange={(value: any) => setPropertyInfo({...propertyInfo, location: value})} 
-                         />
-                         </div>
-                         <Map center={propertyInfo.location?.latlng}/>
-                       </div>
+          
+                <div className="place-items-center grid gap-4 relative h-[40vh]">
+                    <div className="z-[99] w-full absolute top-0 grid place-items-center">
+                    <CountrySelect 
+                    value={propertyInfo.location} 
+                    onChange={(value: any) => setPropertyInfo({...propertyInfo, location: value})} 
+                    />
+                    </div>
+                    <Map center={propertyInfo.location?.latlng}/>
+                  </div>
                
                     
     )
@@ -251,7 +224,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
             <div className={`flex w-full items-center  ${step === 0 ? 'justify-end' : 'justify-between'}`}>
              {step !== 0 && <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>}
               <Button 
-              clickEvent={step === STEPS.PRICE && onNext} 
+              clickEvent={step !== STEPS.PRICE && onNext} 
               text={step === STEPS.PRICE ? 'Finish' : 'Next'} 
               modifier="btn flex-row-reverse" 
               icon={step === STEPS.PRICE ? AiFillCheckCircle : IoChevronForwardCircleSharp}/>

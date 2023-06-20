@@ -31,6 +31,7 @@ const Map: React.FC<MapProps> = ({ center }) => {
         zoom={center ? 4 : 2} 
         scrollWheelZoom={false} 
         className="h-[30vh] w-[60vw] lg:w-[50vw] rounded-xl"
+        
       >
         <TileLayer
           url={url}
