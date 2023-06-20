@@ -44,7 +44,7 @@ const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal
 
   const { categories } = useLinks()
   const { propertyInfo, setPropertyInfo, handleAddProperty, onBack,
-          onNext, STEPS, step, onSendData } = useAddProperty()
+          onNext, STEPS, step, onSendData, setStep, initialListingInfo } = useAddProperty()
  
  
   console.log(propertyInfo);
@@ -230,8 +230,10 @@ const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal
               <Button 
               clickEvent={() => {
                 if(step === STEPS.PRICE ) {
-                  setToggleModal(false)
                   onSendData()
+                  setToggleModal(false)
+                  setStep(STEPS.CATEGORY)
+                  setPropertyInfo(initialListingInfo)
                 } else {
                   onNext()
                 }

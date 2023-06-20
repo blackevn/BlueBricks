@@ -67,9 +67,9 @@ const useAddProperty = () => {
       toast.custom(() => (<Toast text="Property added" modifier="bg-green-500 text-white" icon={AiFillCheckCircle}/>))
      
   }
-  
+
   return {propertyInfo, setPropertyInfo, handleAddProperty, onBack,
-          onNext, STEPS, step, onSendData}
+          onNext, STEPS, step, onSendData, setStep, initialListingInfo}
 };
 
 export default useAddProperty;
