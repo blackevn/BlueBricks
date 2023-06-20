@@ -228,7 +228,7 @@ const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal
             <div className={`flex w-full items-center  ${step === 0 ? 'justify-end' : 'justify-between'}`}>
              {step !== 0 && <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>}
               <Button 
-              disabled={!propertyInfo.title && true}
+              disabled={step === 5 && !propertyInfo.title ? true : false}
               clickEvent={() => {
                 if(step === STEPS.PRICE ) {
                   onSendData()
