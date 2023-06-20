@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react";
 import { BsHouseAdd } from "react-icons/bs";
 import Button from "../button";
 import { IoChevronBackCircleSharp, IoChevronForwardCircleSharp } from "react-icons/io5";
@@ -28,6 +28,7 @@ type AddPropertyProps = {
 
   handleToggleModal: ClickEvent
   toggleModal: boolean
+  setToggleModal:  Dispatch<SetStateAction<boolean>>
 }
 
 const Heading: React.FC<Props> = ({ label, title }) => {
@@ -39,7 +40,7 @@ const Heading: React.FC<Props> = ({ label, title }) => {
   
 }
 
-const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal}) => {
+const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal, setToggleModal}) => {
 
   const { categories } = useLinks()
   const { propertyInfo, setPropertyInfo, handleAddProperty, onBack,
@@ -229,7 +230,7 @@ const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal
               <Button 
               clickEvent={() => {
                 addOrNext()
-                handleToggleModal()
+                setToggleModal(false)
               }} 
               text={step === STEPS.PRICE ? 'Finish' : 'Next'} 
               modifier="btn flex-row-reverse" 

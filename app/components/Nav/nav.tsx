@@ -40,9 +40,14 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
                  modal={toggleModal ? 'modal-2' : ''}
                  toggle={toggleModal}
                  onClick={() => setToggleModal(true)}
+                 checked={toggleModal}
                  >
 
-                    <AddProperty toggleModal={toggleModal} handleToggleModal={handleToggleModal}/>
+                    <AddProperty 
+                    toggleModal={toggleModal} 
+                    handleToggleModal={handleToggleModal} 
+                    setToggleModal={setToggleModal}
+                    />
                    
                  </Modal>}
 
