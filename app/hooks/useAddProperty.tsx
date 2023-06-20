@@ -1,5 +1,9 @@
 import { Listing } from "@/types/interfaces";
 import { useState } from "react";
+import { useGeneralContext } from "../context/AppContext";
+import { toast } from "react-hot-toast";
+import { Toast } from "../components";
+import { AiFillCheckCircle } from "react-icons/ai";
 
 enum STEPS {
   CATEGORY = 0,
@@ -24,13 +28,10 @@ const useAddProperty = () => {
       title: '',
       description: '',
     }
-    
-
-
-
+  
     const [ propertyInfo, setPropertyInfo ] = useState<Listing>(initialListingInfo)
     const [ step, setStep ] = useState(STEPS.CATEGORY);
-
+    const { setAddModalToggle } = useGeneralContext()
     const handleAddProperty = (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value, type, name, checked} = e.target
       const newValue = type === "checkbox" ? checked : value;
@@ -55,9 +56,14 @@ const useAddProperty = () => {
     setStep((prevValue) => prevValue + 1);
   }
   }
+
+  const onAddProperty = () => {
+    setAddModalToggle()
+    toast.custom(() => (<Toast text="Property added" modifier="bg-green-500 text-white" icon={AiFillCheckCircle}/>))
+  }
    
   return {propertyInfo, setPropertyInfo, handleAddProperty, onBack,
-          onNext, STEPS, step}
+          onNext, STEPS, step, onAddProperty}
 };
 
 export default useAddProperty;

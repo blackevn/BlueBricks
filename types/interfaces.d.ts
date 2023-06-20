@@ -92,6 +92,8 @@ export interface ContextData {
   width: number
   height: number
   user?: IUser
+  addModalToggle?: boolean | undefined
+  setAddModalToggle?: ClickEvent
   toggle?: ToggleHandler
   showPassword?: ToggleHandler
   handleToggle?: ClickEvent

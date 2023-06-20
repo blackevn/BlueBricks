@@ -12,6 +12,7 @@ import { signOut } from "next-auth/react";
 import { FaArrowCircleRight, FaPlus } from "react-icons/fa";
 import AddProperty from "../Forms/AddProperty";
 import { BsHouseAdd } from "react-icons/bs";
+import { useGeneralContext } from "@/app/context/AppContext";
 
 interface NavbarProps {
     currentUser: IUser | null
@@ -21,6 +22,7 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
 
   const { menuItems } = useLinks()
   const [ toggleModal, handleToggleModal, setToggleModal ] = useToggle(false)
+  const { setAddModalToggle, addModalToggle } = useGeneralContext()
 
     return <>
             <nav className="w-screen flex justify-between items-center box-border">
@@ -35,6 +37,7 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
                  icon={BsHouseAdd}
                  modal={'modal-2'}
                  toggle={toggleModal}
+                 checked={addModalToggle}
                  >
 
                     <AddProperty/>

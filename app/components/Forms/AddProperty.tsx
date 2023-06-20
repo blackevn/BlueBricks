@@ -5,7 +5,7 @@ import { BsHouseAdd } from "react-icons/bs";
 import Button from "../button";
 import { IoChevronBackCircleSharp, IoChevronForwardCircleSharp } from "react-icons/io5";
 import Input from "./input";
-import { useAddProperty, useLinks } from "@/app/hooks";
+import { useAddProperty, useLinks, useToggle } from "@/app/hooks";
 import { useGeneralContext } from "@/app/context/AppContext";
 import CategoryItem from "./categoryItem";
 import { Listing } from "@prisma/client";
@@ -40,7 +40,8 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const { categories } = useLinks()
   const { propertyInfo, setPropertyInfo, handleAddProperty, onBack,
-          onNext, STEPS, step } = useAddProperty()
+          onNext, STEPS, step, onAddProperty } = useAddProperty()
+  const { setAddModalToggle } = useGeneralContext()
  
   console.log(propertyInfo);
   
@@ -224,7 +225,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
             <div className={`flex w-full items-center  ${step === 0 ? 'justify-end' : 'justify-between'}`}>
              {step !== 0 && <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>}
               <Button 
-              clickEvent={step !== STEPS.PRICE && onNext} 
+              clickEvent={step !== STEPS.PRICE ? onNext : onAddProperty} 
               text={step === STEPS.PRICE ? 'Finish' : 'Next'} 
               modifier="btn flex-row-reverse" 
               icon={step === STEPS.PRICE ? AiFillCheckCircle : IoChevronForwardCircleSharp}/>
