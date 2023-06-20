@@ -16,7 +16,7 @@ export const GeneralAppContext = ({ children }: IProps) => {
 
     const [ height ] = useHeight()
     const [ width ] = useWidth()
-    const [ addModalToggle, setAddModalToggle ] = useToggle()
+    const [ addModalToggle, setAddModalToggle ] = useToggle(false)
 
   return <GeneralContext.Provider value={{ height,  width, addModalToggle, setAddModalToggle }}>
 
