@@ -233,7 +233,9 @@ const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal
                   onSendData()
                   setToggleModal(false)
                   setPropertyInfo(initialListingInfo)
-                  setStep(STEPS.CATEGORY)
+                  setTimeout(() => {
+                    setStep(STEPS.CATEGORY)
+                  }, 1000)
                 } else {
                   onNext()
                 }
