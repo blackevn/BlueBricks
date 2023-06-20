@@ -17,6 +17,7 @@ import Loading from "../Loading/loading";
 import { MdTitle } from "react-icons/md";
 import { LuSubtitles } from "react-icons/lu";
 import { AiFillCheckCircle } from "react-icons/ai";
+import { ClickEvent } from "@/types/interfaces";
 
 type Props = {
   label?: string
@@ -25,8 +26,8 @@ type Props = {
 
 type AddPropertyProps = {
 
-  
-
+  handleToggleModal: ClickEvent
+  toggleModal: boolean
 }
 
 const Heading: React.FC<Props> = ({ label, title }) => {

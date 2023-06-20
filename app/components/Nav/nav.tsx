@@ -37,11 +37,11 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
                  label="Add your property"
                  modifier="btn px-4 rounded-full text-[0.75rem]"
                  icon={BsHouseAdd}
-                 modal={``}
+                 modal={toggleModal ? 'modal-2' : ''}
                  toggle={toggleModal}
                  >
 
-                    <AddProperty/>
+                    <AddProperty toggleModal={toggleModal} handleToggleModal={handleToggleModal}/>
                    
                  </Modal>}
 
