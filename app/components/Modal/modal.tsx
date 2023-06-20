@@ -11,12 +11,13 @@ type ModalProps = {
     modal?: string | boolean
     checked?: boolean
     toggle?: boolean
+    onClick?: () => void
 }
 
-const Modal: React.FC<ModalProps> = ({children, modifier, label, icon: Icon, modal, toggle, checked}) => {
+const Modal: React.FC<ModalProps> = ({children, modifier, label, icon: Icon, modal, toggle, checked, onClick}) => {
 
 return <>
-      <label className={`flex ${modifier} space-x-2 items-center`} htmlFor={`${modal}`}> 
+      <label onClick={onClick} className={`flex ${modifier} space-x-2 items-center`} htmlFor={`${modal}`}> 
         <Icon/>
         <span>{label}</span>
       </label>
