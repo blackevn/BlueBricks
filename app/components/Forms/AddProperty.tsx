@@ -232,8 +232,8 @@ const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal
                 if(step === STEPS.PRICE ) {
                   onSendData()
                   setToggleModal(false)
-                  setStep(STEPS.CATEGORY)
                   setPropertyInfo(initialListingInfo)
+                  setStep(STEPS.CATEGORY)
                 } else {
                   onNext()
                 }

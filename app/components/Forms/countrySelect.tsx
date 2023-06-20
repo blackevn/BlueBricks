@@ -28,12 +28,12 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
       ...defaultStyles,
       color: '#fffff'  ,
       zIndex: 99,
-      width: '35vw',
+      width: '50vw',
       textColor: 'white',
       backgroundColor: "#161616" ,
     }),
     input: () => ({
-      width: '35vw'
+      width: '50vw'
     }),
     control: (defaultStyles: any) => ({
       ...defaultStyles,
@@ -42,7 +42,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
       borderRadius: '1em',
       boxShadow: "none",
       zIndex: 99,
-      width: '35vw'
+      width: '50vw'
     }),
     singleValue: (defaultStyles: any) => ({ ...defaultStyles, color: "#fffff" }),
   };
@@ -52,7 +52,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
       <Select
         menuPlacement="top"
         styles={customStyles}
-        placeholder="Anywhere"
+        placeholder="Type in the location"
         isClearable
         options={getAll()}
         value={value}
