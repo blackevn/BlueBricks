@@ -8,7 +8,7 @@ type ModalProps = {
     modifier?: string
     label?: string
     icon: IconType
-    modal?: string
+    modal?: string | boolean
     checked?: boolean
     toggle?: boolean
 }
