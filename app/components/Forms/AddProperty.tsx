@@ -40,7 +40,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
 
   const { categories } = useLinks()
   const { propertyInfo, setPropertyInfo, handleAddProperty, onBack,
-          onNext, STEPS, step, onAddProperty } = useAddProperty()
+          onNext, STEPS, step, onAddProperty, addOrNext } = useAddProperty()
   const { setAddModalToggle } = useGeneralContext()
  
   console.log(propertyInfo);
@@ -225,7 +225,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
             <div className={`flex w-full items-center  ${step === 0 ? 'justify-end' : 'justify-between'}`}>
              {step !== 0 && <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>}
               <Button 
-              clickEvent={() => step !== STEPS.PRICE ? onNext() : onAddProperty()} 
+              clickEvent={addOrNext} 
               text={step === STEPS.PRICE ? 'Finish' : 'Next'} 
               modifier="btn flex-row-reverse" 
               icon={step === STEPS.PRICE ? AiFillCheckCircle : IoChevronForwardCircleSharp}/>

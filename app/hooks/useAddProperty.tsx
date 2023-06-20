@@ -61,9 +61,18 @@ const useAddProperty = () => {
     setAddModalToggle()
     toast.custom(() => (<Toast text="Property added" modifier="bg-green-500 text-white" icon={AiFillCheckCircle}/>))
   }
-   
+
+  const addOrNext = () => {
+
+    if (step === STEPS.PRICE) {
+      onAddProperty
+    } else {
+      onNext
+    }
+     
+  }
   return {propertyInfo, setPropertyInfo, handleAddProperty, onBack,
-          onNext, STEPS, step, onAddProperty}
+          onNext, STEPS, step, onAddProperty, addOrNext}
 };
 
 export default useAddProperty;
