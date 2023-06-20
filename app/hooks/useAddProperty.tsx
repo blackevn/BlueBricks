@@ -63,18 +63,13 @@ const useAddProperty = () => {
   }
 
 
-  const addOrNext = () => {
-
-    if (step === STEPS.PRICE) {
+  const onSendData = () => {
       toast.custom(() => (<Toast text="Property added" modifier="bg-green-500 text-white" icon={AiFillCheckCircle}/>))
-      router.push('/')
-    } else {
-      onNext()
-    }
      
   }
+  
   return {propertyInfo, setPropertyInfo, handleAddProperty, onBack,
-          onNext, STEPS, step, addOrNext}
+          onNext, STEPS, step, onSendData}
 };
 
 export default useAddProperty;

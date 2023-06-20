@@ -44,7 +44,7 @@ const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal
 
   const { categories } = useLinks()
   const { propertyInfo, setPropertyInfo, handleAddProperty, onBack,
-          onNext, STEPS, step, addOrNext } = useAddProperty()
+          onNext, STEPS, step, onSendData } = useAddProperty()
  
  
   console.log(propertyInfo);
@@ -229,8 +229,12 @@ const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal
              {step !== 0 && <Button clickEvent={onBack} text="Back" modifier="btn" icon={IoChevronBackCircleSharp}/>}
               <Button 
               clickEvent={() => {
-                addOrNext()
-                setToggleModal(false)
+                if(step === STEPS.PRICE ) {
+                  setToggleModal(false)
+                  onSendData()
+                } else {
+                  onNext()
+                }
               }} 
               text={step === STEPS.PRICE ? 'Finish' : 'Next'} 
               modifier="btn flex-row-reverse" 
