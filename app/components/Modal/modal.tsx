@@ -9,18 +9,18 @@ type ModalProps = {
     label?: string
     icon: IconType
     modal?: string
+    checked?: boolean
     toggle?: boolean
-    modalState?: string
 }
 
-const Modal: React.FC<ModalProps> = ({children, modifier, label, icon: Icon, modal, toggle, modalState}) => {
+const Modal: React.FC<ModalProps> = ({children, modifier, label, icon: Icon, modal, toggle, checked}) => {
 
 return <>
       <label className={`flex ${modifier} space-x-2 items-center`} htmlFor={`${modal}`}> 
         <Icon/>
         <span>{label}</span>
       </label>
-        <input className={`${modalState}`} id={`${modal}`} type="checkbox" />
+        <input className="modal-state" checked={checked} id={`${modal}`} type="checkbox" />
         <div className="modal">
             <label className="modal-overlay" htmlFor={`${modal}`}></label>
             <div className="modal-content flex flex-col gap-5 max-w-none">
