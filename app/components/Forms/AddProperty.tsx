@@ -41,7 +41,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   const { categories } = useLinks()
   const { propertyInfo, setPropertyInfo, handleAddProperty, onBack,
           onNext, STEPS, step, onAddProperty, addOrNext } = useAddProperty()
-  const { setAddModalToggle } = useGeneralContext()
+  const { setAddModalToggle, addModalToggle } = useGeneralContext()
  
   console.log(propertyInfo);
   
