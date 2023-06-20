@@ -39,6 +39,7 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
                  icon={BsHouseAdd}
                  modal={toggleModal ? 'modal-2' : ''}
                  toggle={toggleModal}
+                 onClick={handleToggleModal}
                  >
 
                     <AddProperty toggleModal={toggleModal} handleToggleModal={handleToggleModal}/>
