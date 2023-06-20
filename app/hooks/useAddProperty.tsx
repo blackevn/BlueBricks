@@ -65,9 +65,9 @@ const useAddProperty = () => {
   const addOrNext = () => {
 
     if (step === STEPS.PRICE) {
-      onAddProperty
+      onAddProperty()
     } else {
-      onNext
+      onNext()
     }
      
   }
