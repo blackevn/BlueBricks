@@ -25,6 +25,8 @@ type Props = {
 
 type AddPropertyProps = {
 
+  
+
 }
 
 const Heading: React.FC<Props> = ({ label, title }) => {
@@ -41,10 +43,9 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   const { categories } = useLinks()
   const { propertyInfo, setPropertyInfo, handleAddProperty, onBack,
           onNext, STEPS, step, addOrNext } = useAddProperty()
-  const { setAddModalToggle, addModalToggle } = useGeneralContext()
+ 
  
   console.log(propertyInfo);
-  console.log(addModalToggle);
   console.log(step);
   
     let heading = <></>

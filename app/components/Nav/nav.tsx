@@ -22,7 +22,9 @@ const Nav: React.FC<NavbarProps> = ({ currentUser }) => {
 
   const { menuItems } = useLinks()
   const [ toggleModal, handleToggleModal, setToggleModal ] = useToggle(false)
-  const { setAddModalToggle, addModalToggle } = useGeneralContext()
+
+  console.log(toggleModal);
+  
 
     return <>
             <nav className="w-screen flex justify-between items-center box-border">
