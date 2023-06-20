@@ -44,7 +44,7 @@ const AddProperty: React.FC<AddPropertyProps> = () => {
   const { setAddModalToggle, addModalToggle } = useGeneralContext()
  
   console.log(propertyInfo);
-  
+  console.log(addModalToggle);
   console.log(step);
   
     let heading = <></>
