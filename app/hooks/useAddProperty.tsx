@@ -7,6 +7,8 @@ import { toast } from "react-hot-toast";
 import { Toast } from "../components";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import { FaExclamationTriangle } from "react-icons/fa";
 
 
 enum STEPS {
@@ -64,8 +66,15 @@ const useAddProperty = () => {
 
 
   const onSendData = () => {
-      toast.custom(() => (<Toast text="Property added" modifier="bg-green-500 text-white" icon={AiFillCheckCircle}/>))
-     
+     axios.post('/api/listing', propertyInfo)
+     .then(() => {
+       toast.custom(() => (<Toast text="Property added" modifier="bg-green-500 text-white" icon={AiFillCheckCircle}/>))
+
+     })
+     .catch(error => toast.custom(() => (
+     <Toast text="Something went wrong" modifier="bg-orange-500 text-white" icon={FaExclamationTriangle}/>
+     )))
+
   }
 
   return {propertyInfo, setPropertyInfo, handleAddProperty, onBack,
