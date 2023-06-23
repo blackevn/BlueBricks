@@ -21,8 +21,8 @@ module.exports = {
 				themeName: "light",
 				colorScheme: "light",
 				colors: {
-          primary: "#573242",
-					backgroundPrimary: "#1a1a1a",
+          primary: "#000000",
+					backgroundPrimary: "#ffffff",
 					
 				},
 			},
@@ -30,8 +30,8 @@ module.exports = {
 				themeName: "dark",
 				colorScheme: "dark",
 				colors: {
-          primary: "#235264",
-					backgroundPrimary: "#964643",
+          primary: "#ffffff",
+					backgroundPrimary: "#000000",
 				},
 			},
 		],
