@@ -101,6 +101,7 @@ export interface ContextData {
   toggleDarkMode?: ClickEvent,
   propertyInfo?: Listing
   setPropertyInfo?: Dispatch<SetStateAction<Listing>>
+  listings?: Promise
 }
 
   export interface NavigationLinks {
@@ -125,16 +126,15 @@ export interface ContextData {
 
   
   export interface IUser {
-    createdAt: string;
-    updatedAt: string;
-    emailVerified: string | null;
-    id: string;
-    name: string | null;
-    email: string | null;
-    image: string | null;
-    hashedPassword: string | null;
+    createdAt: string; 
+    updatedAt: string; 
+    emailVerified: string | null; 
+    id: string; 
+    name: string | null; 
+    email: string | null; 
+    image: string | null; 
+    hashedPassword: string | null; 
     favoriteIds: string[];
-  
   }
 
   export  type Listing = {

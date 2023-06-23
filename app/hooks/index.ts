@@ -7,9 +7,10 @@ import useLinks from "./useLinks";
 import useAuthForm from "./useAuthForm";
 import useAddProperty from "./useAddProperty";
 import useCountries from "./useCountries";
+import useAllData from "./useAllData";
 
 export {
     useDarkMode, useVariants, useHeight, 
     useWidth, useToggle, useLinks, useAuthForm,
-    useAddProperty, useCountries
+    useAddProperty, useCountries, useAllData
 }
