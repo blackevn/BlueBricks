@@ -8,7 +8,7 @@ const page = async () => {
 
   let isLoading = false
 
-  return <div>
+  return <div className='p-4'>
           { !isLoading ? <ListLoading/> : <ListCard listings={listings}/>}
           </div>;
 };
