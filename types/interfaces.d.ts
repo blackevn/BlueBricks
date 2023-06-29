@@ -152,7 +152,6 @@ export interface ContextData {
     location?: CountrySelectValue
     userId?: string
     price?: number
-  
-}
+  }
 
 
