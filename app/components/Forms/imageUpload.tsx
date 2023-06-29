@@ -29,7 +29,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       onUpload={handleUpload} 
       uploadPreset={uploadPreset}
       options={{
-        maxFiles: 5
+        maxFiles: 1
       }}
     >
       {({ open }) => {
