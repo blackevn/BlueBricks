@@ -12,7 +12,7 @@ const page = async () => {
  
   return <div className='p-8'>
           { !isLoading ? 
-          <div>
+          <div className="grid grid-cols-3 gap-4">
            { loading.map(() => <ListLoading/>) } 
 
           </div>
