@@ -14,11 +14,12 @@ import AuthForm from "./Forms/AuthForm";
 import ToasterWrap from "./Toast/toasterWrap";
 import CategoriesSlide from "./Nav/categoriesSlide";
 import AddProperty from "./Forms/AddProperty";
+import ListCard from "./listCard";
 export {
 
     Nav, Button, Loading, Toggle, Toast,
     FilterNav, FilterItem, ToastButton,
     UserDropdown, Avatar, Select, Modal,
     AuthForm, ToasterWrap, CategoriesSlide,
-    AddProperty
+    AddProperty, ListCard
 }
