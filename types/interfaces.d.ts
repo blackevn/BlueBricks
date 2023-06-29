@@ -148,7 +148,7 @@ export interface ContextData {
     roomCount?: number
     bathroomCount?: number
     guestCount?: number
-    locationValue?: string
+    locationValue?: string 
     location?: CountrySelectValue
     userId?: string
     price?: number

@@ -3,6 +3,7 @@ import { getListings } from "./actions";
 import { ListCard } from "./components";
 import { ListLoading } from "./components/Loading";
 
+
 const page = async () => {
 
   const listings = await getListings()
@@ -22,7 +23,7 @@ const page = async () => {
           <div className="grid grid-cols-4 gap-4 place-items-center">
             {listings.map((list) => ( <ListCard 
                                        key={list.id} 
-                                       listings={list}
+                                       listing={list}
                                        /> 
                                        ))}
           </div>

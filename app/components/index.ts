@@ -14,7 +14,7 @@ import AuthForm from "./Forms/AuthForm";
 import ToasterWrap from "./Toast/toasterWrap";
 import CategoriesSlide from "./Nav/categoriesSlide";
 import AddProperty from "./Forms/AddProperty";
-import ListCard from "./listCard";
+import ListCard from "./Listing/listCard";
 export {
 
     Nav, Button, Loading, Toggle, Toast,
