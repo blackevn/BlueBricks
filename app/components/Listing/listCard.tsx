@@ -61,7 +61,7 @@ const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
 
 return <div 
         onClick={() => router.push(`/listings/${listing?.id}`)} 
-        className="col-span-1 cursor-pointer group"
+        className="col-span-1 cursor-pointer hover:bg-gray-2 rounded-2xl transition-all p-2"
         >
           <Image
           src={listing?.imageSrc.toString()}
