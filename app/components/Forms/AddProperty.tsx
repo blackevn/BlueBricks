@@ -198,8 +198,8 @@ const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal
     bodyContent = (
                       <div className="space-y-4">
 
-                      <div className="flex items-center">
-                      <h1 className="font-bold">$</h1>
+                      <div className="flex items-center gap-2">
+                      <h1 className="font-bold text-2xl">$</h1>
                       <Input
                       type="number"
                       onChange={handleAddProperty}
