@@ -11,7 +11,7 @@ const page = async () => {
 
   let loading: number[] = [ 0, 1, 2, 3, 4, 5, 6 , 7, 8 ]
  
-  return <div className='md:px-10 lg:px-32'>
+  return <div className='px-5 md:px-10 lg:px-32'>
           { !listings ? 
            <div className="listGrid">
            { loading.map(() => <ListLoading/>) } 
