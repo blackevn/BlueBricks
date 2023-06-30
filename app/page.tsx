@@ -14,13 +14,13 @@ const page = async () => {
  
   return <div className='p-8'>
           { !listings ? 
-          <div className="grid grid-cols-4 gap-4 place-items-center">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center">
            { loading.map(() => <ListLoading/>) } 
           </div>
 
            : 
           
-          <div className="grid grid-cols-4 gap-4 place-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center">
             {listings.map((list) => ( <ListCard 
                                        key={list.id} 
                                        listing={list}
