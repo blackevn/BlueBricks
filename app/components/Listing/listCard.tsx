@@ -66,7 +66,7 @@ return <div
           <Image
           src={listing?.imageSrc.toString()}
           alt="Listing image"
-          className=' rounded-lg'
+          className=' rounded-lg w-full h-full'
           />
           {listing?.title}
       </div>

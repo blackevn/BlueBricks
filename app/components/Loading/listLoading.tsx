@@ -2,7 +2,7 @@
 const ListLoading = () => {
   return <>
 
-            <div className="h-[300px] w-[300px] skeleton-pulse">
+            <div className="h-[300px] w-full skeleton-pulse">
 
             </div>
 
