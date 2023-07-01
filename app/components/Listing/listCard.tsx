@@ -84,7 +84,7 @@ return <div
           <div>
           <h1 className="font-bold">{location?.region}, {location?.label}</h1>
           <h1>{listing?.title}</h1>
-          <h1 className="font-bold">${listing?.price}</h1>
+          <h1 className="font-bold">${listing?.price}/night</h1>
           </div>
           </div>
           <Button

@@ -210,6 +210,7 @@ const AddProperty: React.FC<AddPropertyProps> = ({handleToggleModal, toggleModal
                       modifier="input authInput w-[60vw] lg:w-[45vw]"
                       iconModifier="hidden"
                       />
+                      <h1>/night</h1>
                       </div>
                     </div>
     )
