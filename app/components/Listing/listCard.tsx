@@ -90,7 +90,7 @@ return <div
           <Button
           text="Reserve"
           icon={BsCalendarPlusFill}
-          modifier="w-full btn mx-1"
+          modifier="w-full btn m-auto"
           />
       </div>
 };
