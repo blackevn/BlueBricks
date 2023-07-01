@@ -9,6 +9,7 @@ import { format } from 'date-fns';
 import Image from "next/image";
 import Button from "../button";
 import { FaHeart } from "react-icons/fa";
+import { IoMdAddCircle } from "react-icons/io";
 
 type ListingProps = {
   listing: Listing
@@ -70,17 +71,22 @@ return <div
           alt="Listing image"
           className='rounded-lg max-h-[200px] w-full lg:max-h-[200px] lg:max-w-[300px] object-cover'
           />
-          <div className="">
+          <div className=" space-x-1">
           <div className="flex justify-between">
-          <h1 className="rounded-full p-2 text-sm font-thin bg-gray-3">{reservationDate || listing?.category}</h1>
+          <h1 className="rounded-full px-2 text-[11px] font-thin bg-gray-3">{reservationDate || listing?.category}</h1>
           <Button
           icon={FaHeart}
           modifier="btn"
+          text=""
           />
           </div>
           <h1 className="font-bold">{location?.region}, {location?.label}</h1>
           <h1>{listing?.title}</h1>
           <h1 className="font-bold">${listing?.price}</h1>
+          <Button
+          text="Reserve"
+          icon={IoMdAddCircle}
+          />
           </div>
 
       </div>
