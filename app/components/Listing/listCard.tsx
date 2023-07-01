@@ -68,7 +68,12 @@ return <div
           alt="Listing image"
           className='rounded-lg max-h-[200px] w-full lg:max-h-[200px] lg:max-w-[300px] object-cover'
           />
-          {listing?.title}
+          <h1>{reservationDate || listing?.category}</h1>
+          <h1>{listing?.title}</h1>
+          <h1 className="font-bold">{location?.region}, {location?.label}</h1>
+          <h1 className="font-black">${listing?.price}</h1>
+
+
       </div>
 };
 
