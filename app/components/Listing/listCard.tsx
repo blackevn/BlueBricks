@@ -10,6 +10,7 @@ import Image from "next/image";
 import Button from "../button";
 import { FaHeart } from "react-icons/fa";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { BsCalendarPlusFill } from "react-icons/bs";
 
 type ListingProps = {
   listing: Listing
@@ -75,7 +76,7 @@ return <div
           <div className="flex justify-between">
           <h1 className="rounded-full grid place-items-center px-2 py-0 text-[12px] font-thin bg-gray-3 italic">{reservationDate || listing?.category}</h1>
           <Button
-          icon={FaHeart}
+          icon={AiOutlineHeart}
           text=""
           />
           </div>
@@ -84,8 +85,8 @@ return <div
           <h1 className="font-bold">${listing?.price}</h1>
           <Button
           text="Reserve"
-          icon={AiOutlineHeart}
-          modifier="w-full btn"
+          icon={BsCalendarPlusFill}
+          modifier=" btn"
           />
           </div>
 
