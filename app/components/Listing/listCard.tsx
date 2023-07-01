@@ -72,7 +72,7 @@ return <div
           alt="Listing image"
           className='rounded-lg max-h-[200px] w-full lg:max-h-[200px] lg:max-w-[300px] object-cover'
           />
-          <div className=" space-x-4">
+          <div className="space-y-4">
           <div className="flex justify-between">
           <h1 className="rounded-full grid place-items-center px-2 py-0 text-[12px] font-thin bg-gray-3 italic">{reservationDate || listing?.category}</h1>
           <Button
