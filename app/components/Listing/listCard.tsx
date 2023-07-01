@@ -72,24 +72,26 @@ return <div
           alt="Listing image"
           className='rounded-lg max-h-[200px] w-full lg:max-h-[200px] lg:max-w-[300px] object-cover'
           />
-          <div className=" space-x-1">
+          <div className=" space-x-4">
           <div className="flex justify-between">
           <h1 className="rounded-full grid place-items-center px-2 py-0 text-[12px] font-thin bg-gray-3 italic">{reservationDate || listing?.category}</h1>
           <Button
           icon={AiOutlineHeart}
           text=""
+          modifier="text-lg"
           />
           </div>
+          <div>
           <h1 className="font-bold">{location?.region}, {location?.label}</h1>
           <h1>{listing?.title}</h1>
           <h1 className="font-bold">${listing?.price}</h1>
+          </div>
+          </div>
           <Button
           text="Reserve"
           icon={BsCalendarPlusFill}
-          modifier=" btn"
+          modifier="w-full btn mx-1"
           />
-          </div>
-
       </div>
 };
 
