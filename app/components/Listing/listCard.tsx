@@ -73,7 +73,7 @@ return <div
           />
           <div className=" space-x-1">
           <div className="flex justify-between">
-          <h1 className="rounded-full grid place-items-center text-[12px] font-thin bg-gray-3">{reservationDate || listing?.category}</h1>
+          <h1 className="rounded-full grid place-items-center px-2 py-0 text-[12px] font-thin bg-gray-3 italic">{reservationDate || listing?.category}</h1>
           <Button
           icon={FaHeart}
           modifier="btn"
