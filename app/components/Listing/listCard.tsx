@@ -7,6 +7,8 @@ import { useCountries } from "../../hooks";
 import React, { useCallback, useMemo } from "react";
 import { format } from 'date-fns';
 import Image from "next/image";
+import Button from "../button";
+import { FaHeart } from "react-icons/fa";
 
 type ListingProps = {
   listing: Listing
@@ -69,7 +71,13 @@ return <div
           className='rounded-lg max-h-[200px] w-full lg:max-h-[200px] lg:max-w-[300px] object-cover'
           />
           <div className="">
+          <div className="flex justify-between">
           <h1 className="rounded-full p-2 text-sm font-thin bg-gray-3">{reservationDate || listing?.category}</h1>
+          <Button
+          icon={FaHeart}
+          modifier="btn"
+          />
+          </div>
           <h1 className="font-bold">{location?.region}, {location?.label}</h1>
           <h1>{listing?.title}</h1>
           <h1 className="font-bold">${listing?.price}</h1>
