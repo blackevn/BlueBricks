@@ -9,7 +9,7 @@ import { format } from 'date-fns';
 import Image from "next/image";
 import Button from "../button";
 import { FaHeart } from "react-icons/fa";
-import { IoMdAddCircle } from "react-icons/io";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 type ListingProps = {
   listing: Listing
@@ -76,7 +76,6 @@ return <div
           <h1 className="rounded-full grid place-items-center px-2 py-0 text-[12px] font-thin bg-gray-3 italic">{reservationDate || listing?.category}</h1>
           <Button
           icon={FaHeart}
-          modifier="btn"
           text=""
           />
           </div>
@@ -85,7 +84,8 @@ return <div
           <h1 className="font-bold">${listing?.price}</h1>
           <Button
           text="Reserve"
-          icon={IoMdAddCircle}
+          icon={AiOutlineHeart}
+          modifier="w-full btn"
           />
           </div>
 
