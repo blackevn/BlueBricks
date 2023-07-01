@@ -61,18 +61,19 @@ const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
 
 return <div 
         onClick={() => router.push(`/listings/${listing?.id}`)} 
-        className="col-span-1 cursor-pointer hover:bg-gray-2 rounded-2xl transition-all p-2"
+        className="col-span-1 cursor-pointer hover:bg-gray-2 rounded-2xl transition-all p-2 space-y-4"
         >
           <Image
           src={listing?.imageSrc.toString()}
           alt="Listing image"
           className='rounded-lg max-h-[200px] w-full lg:max-h-[200px] lg:max-w-[300px] object-cover'
           />
-          <h1>{reservationDate || listing?.category}</h1>
-          <h1>{listing?.title}</h1>
+          <div className="">
+          <h1 className="rounded-full p-2 text-sm font-thin bg-gray-3">{reservationDate || listing?.category}</h1>
           <h1 className="font-bold">{location?.region}, {location?.label}</h1>
-          <h1 className="font-black">${listing?.price}</h1>
-
+          <h1>{listing?.title}</h1>
+          <h1 className="font-bold">${listing?.price}</h1>
+          </div>
 
       </div>
 };
