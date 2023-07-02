@@ -3,7 +3,7 @@
 import { IUser,  } from "@/types/interfaces";
 import { Reservation, Listing } from "@prisma/client";
 import { useRouter } from "next/navigation";
-import { useCountries } from "../../hooks";
+import { useCountries, useFavourite } from "../../hooks";
 import React, { useCallback, useMemo } from "react";
 import { format } from 'date-fns';
 import Image from "next/image";
@@ -33,9 +33,14 @@ const ListCard: React.FC<ListingProps> = ({
                                           actionLabel,
                                           }) => {
 
+const listingId = listing.id
 const router = useRouter()
 const { getByValue } = useCountries()
 const location = getByValue(listing?.locationValue)
+const { hasFavorited, toggleFavorite } = useFavourite({
+  listingId,
+  currentUser
+});
 
 const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
   e.stopPropagation()
@@ -76,9 +81,10 @@ return <div
           <div className="flex justify-between">
           <h1 className="rounded-full grid place-items-center px-2 py-0 text-[12px] font-thin bg-gray-3 italic">{reservationDate || listing?.category}</h1>
           <Button
-          icon={AiOutlineHeart}
+          icon={hasFavorited ? AiFillHeart : AiOutlineHeart}
           text=""
           modifier="text-lg"
+          clickEvent={toggleFavorite}
           />
           </div>
           <div>
