@@ -36,7 +36,7 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
       await request();
       router.refresh();
       toast.custom(() => (
-        <Toast text="Favorited" modifier="bg-green-500 text-white" icon={AiFillHeart}/>
+        <Toast text="Favorited" modifier="bg-red-400 text-white" icon={AiFillHeart}/>
         ))
     } catch (error) {
       toast.custom(() => (
