@@ -86,8 +86,8 @@ return <div
           text=""
           modifier="text-lg"
           clickEvent={(e: React.MouseEvent<HTMLButtonElement>) => {
-            e.stopPropagation()
-            toggleFavorite
+            e.stopPropagation
+            toggleFavorite()
             handleFavoriteToggle()
           }}
           />
