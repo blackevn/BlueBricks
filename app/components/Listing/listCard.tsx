@@ -45,7 +45,7 @@ const { hasFavorited, toggleFavorite } = useFavourite({
 
 const favorites = (e: React.MouseEvent<HTMLButtonElement>) => {
   e.stopPropagation
-  toggleFavorite()
+  toggleFavorite
   handleFavoriteToggle()
 }
 const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
