@@ -69,6 +69,9 @@ const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
   return `${format(start, 'PP')} - ${format(end, 'PP')}`;
 }, [reservation]);
 
+console.log(hasFavorited);
+
+
 return <div 
         onClick={() => router.push(`/listings/${listing?.id}`)} 
         className="col-span-1 cursor-pointer hover:bg-gray-2 rounded-2xl transition-all p-2 space-y-4"

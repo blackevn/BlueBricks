@@ -7,6 +7,7 @@ import { Toast } from "../components";
 import { AiFillHeart } from "react-icons/ai";
 import { FaExclamationTriangle } from "react-icons/fa";
 import useToggle from "./useToggle";
+import { BsFillHeartbreakFill } from "react-icons/bs";
 
 interface IUseFavorite {
   listingId: string;
@@ -26,6 +27,11 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
   const toggleFavorite = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
     handleFavoriteToggle()
+
+    if (!favoriteToggle) return   toast.custom(() => (
+      <Toast text="Unfavorited" modifier="bg-red-400 text-white" icon={BsFillHeartbreakFill}/>
+      ))
+
     try {
       let request;
 
