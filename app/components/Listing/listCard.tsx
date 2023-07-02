@@ -85,7 +85,8 @@ return <div
           icon={hasFavorited || favoriteToggle ? AiFillHeart : AiOutlineHeart}
           text=""
           modifier="text-lg"
-          clickEvent={() => {
+          clickEvent={(e: React.MouseEvent<HTMLButtonElement>) => {
+            e.stopPropagation()
             toggleFavorite
             handleFavoriteToggle()
           }}
