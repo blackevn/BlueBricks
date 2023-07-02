@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import { Toast } from "../components";
 import { AiFillHeart } from "react-icons/ai";
 import { FaExclamationTriangle } from "react-icons/fa";
+import useToggle from "./useToggle";
 
 interface IUseFavorite {
   listingId: string;
@@ -15,6 +16,7 @@ interface IUseFavorite {
 const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
   const router = useRouter();
 
+  const [ favoriteToggle, handleFavoriteToggle ] = useToggle()
   const hasFavorited = useMemo(() => {
     const list = currentUser?.favoriteIds || [];
 
@@ -23,7 +25,7 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
 
   const toggleFavorite = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
-
+    handleFavoriteToggle()
     try {
       let request;
 
@@ -54,6 +56,8 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
   return {
     hasFavorited,
     toggleFavorite,
+    favoriteToggle, 
+    handleFavoriteToggle
   }
 }
 

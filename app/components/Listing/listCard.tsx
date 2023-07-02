@@ -37,8 +37,7 @@ const listingId = listing.id
 const router = useRouter()
 const { getByValue } = useCountries()
 const location = getByValue(listing?.locationValue)
-const [ favoriteToggle, handleFavoriteToggle ] = useToggle()
-const { hasFavorited, toggleFavorite } = useFavourite({
+const { hasFavorited, toggleFavorite, favoriteToggle  } = useFavourite({
   listingId,
   currentUser
 });
