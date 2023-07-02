@@ -7,7 +7,7 @@ import useLinks from "./useLinks";
 import useAuthForm from "./useAuthForm";
 import useAddProperty from "./useAddProperty";
 import useCountries from "./useCountries";
-import useFavourite from "./useFavourite";
+import useFavourite from "./useFavorite";
 
 
 export {

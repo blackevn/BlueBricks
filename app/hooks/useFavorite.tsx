@@ -3,6 +3,9 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
 import { toast } from "react-hot-toast";
+import { Toast } from "../components";
+import { AiFillHeart } from "react-icons/ai";
+import { FaExclamationTriangle } from "react-icons/fa";
 
 interface IUseFavorite {
   listingId: string;
@@ -32,9 +35,13 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
 
       await request();
       router.refresh();
-      toast.success('Success');
+      toast.custom(() => (
+        <Toast text="Favorited" modifier="bg-green-500 text-white" icon={AiFillHeart}/>
+        ))
     } catch (error) {
-      toast.error('Something went wrong.');
+      toast.custom(() => (
+        <Toast text="Something went wrong" modifier="bg-green-500 text-white" icon={FaExclamationTriangle}/>
+        ))
     }
   }, 
   [
