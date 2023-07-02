@@ -43,6 +43,11 @@ const { hasFavorited, toggleFavorite } = useFavourite({
   currentUser
 });
 
+const favorites = (e: React.MouseEvent<HTMLButtonElement>) => {
+  e.stopPropagation
+  toggleFavorite()
+  handleFavoriteToggle()
+}
 const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
   e.stopPropagation()
   if (disabled) return
@@ -85,11 +90,7 @@ return <div
           icon={hasFavorited || favoriteToggle ? AiFillHeart : AiOutlineHeart}
           text=""
           modifier="text-lg"
-          clickEvent={(e: React.MouseEvent<HTMLButtonElement>) => {
-            e.stopPropagation
-            toggleFavorite()
-            handleFavoriteToggle()
-          }}
+          clickEvent={favorites}
           />
           </div>
           <div>
