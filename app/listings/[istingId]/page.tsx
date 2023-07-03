@@ -1,41 +1,24 @@
-'use client'
 import { getCurrentUser, getListingById, getReservations } from "@/app/actions";
-import { useRouter, usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-
 
 
 interface IParams {
-  listingId: string
+  listingId?: string
 }
 
 
+const ListingPage = async ({ params }: { params: IParams }) => {
 
-const ListingPage = ({ params }: {params: IParams}) => {
-
-  const pathname = usePathname()
-
-  const id = pathname
-
-  let oneListing = null
-
-  useEffect(() => {
-    const getListings = async () => {
-   
-    const listingId = await getListingById(params)
-
-    oneListing = listingId
-    }
-  }, [oneListing])
-
-
-  
-console.log(oneListing);
-console.log(id);
+  const listing = await getListingById(params);
+  const reservations = await getReservations(params);
+  const currentUser = await getCurrentUser();
 
 
   return (
-    <></>
+    <>
+    <div>
+      Listing
+    </div>
+    </>
   );
 }
 
