@@ -3,7 +3,7 @@ import { getCurrentUser, getListingById, getReservations } from "@/app/actions";
 
 const ListingPage = async () => {
 // Get the query string portion of the URL
-const queryString = window.location.search;
+const queryString = window?.location.search;
 
 // Create a new URLSearchParams object with the query string
 const urlParams = new URLSearchParams(queryString);
