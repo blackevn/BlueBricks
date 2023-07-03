@@ -1,7 +1,16 @@
+import { getListingById } from "@/app/actions";
+import { NextPage } from "next";
 import React from "react";
 
-const page = () => {
-  return <div>page</div>;
+interface IParams {
+  listingId?: string
+}
+
+const ListingPage = async ({params}: {params: IParams}) => {
+  const listing = await getListingById(params)
+  return <>
+          <div>{listing?.title}</div>
+        </>
 };
 
-export default page;
+export default ListingPage;
