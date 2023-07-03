@@ -1,13 +1,18 @@
 import { Listing } from "@/types/interfaces";
-import { getListings } from "./actions";
 import { ListCard } from "./components";
 import { ListLoading } from "./components/Loading";
 import { useEffect, useState } from "react";
+import  { getListings } from "./actions";
+import  { IListingsParams } from "./actions/getListings";
+import { NextPage } from "next";
  
+interface HomeProps {
+  searchParams: IListingsParams
+};
 
-const page = async () => {
+const page: NextPage<HomeProps> = async ({searchParams}) => {
 
-  const listings = await getListings()
+  const listings = await getListings(searchParams)
  
   let loading: number[] = [ 0, 1, 2, 3, 4, 5, 6 , 7, 8 ]
  

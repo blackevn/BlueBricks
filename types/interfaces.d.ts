@@ -138,20 +138,20 @@ export interface ContextData {
   }
 
   export  type Listing = {
-
-    id?: number
-    title?: string
-    description?: string
-    imageSrc?: string
-    createdAt?: string
-    category?:  string
-    roomCount?: number
-    bathroomCount?: number
-    guestCount?: number
-    locationValue?: string 
-    location?: CountrySelectValue
-    userId?: string
-    price?: number
+      createdAt: string;
+      id: string;
+      title: string;
+      description: string;
+      imageSrc: string;
+      category: string;
+      roomCount: number;
+      bathroomCount: number;
+      guestCount: number;
+      locationValue: string;
+      userId: string;
+      price: number;
   }
+  
+
 
 
