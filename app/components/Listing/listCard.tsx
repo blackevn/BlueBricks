@@ -1,7 +1,7 @@
 'use client'
 
 import { IUser, Listing,  } from "@/types/interfaces";
-import { Reservation} from "@prisma/client";
+import { Reservation, User} from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useCountries, useFavourite, useToggle } from "../../hooks";
 import React, { useCallback, useMemo } from "react";
@@ -15,7 +15,7 @@ import { BsCalendarPlusFill } from "react-icons/bs";
 type ListingProps = {
   listing: Listing
   reservation?: Reservation
-  currentUser?: IUser
+  currentUser: IUser | null
   onAction?: (id: string) => void
   disabled?: boolean
   actionLabel?: string
