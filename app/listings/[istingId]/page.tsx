@@ -11,12 +11,12 @@ interface IParams {
 
 
 const ListingPage = ({ params }: { params: IParams }) => {
-
-
 const path = usePathname()
-// const list =  listingById(params)
+const listingId = path?.split("/")[2];
+const list = listingId ? listingById(listingId as any) : null;
 
-console.log(path);
+console.log(list);
+
 
 
   // const listing = await getListingById(params);
