@@ -5,21 +5,6 @@ import getCurrentUser from "@/app/actions/getCurrentUser";
 import { getListingById } from "@/app/actions";
 import { NextApiRequest } from "next";
 
-interface IParams {
-  listingId?: string;
-}
-export async function GET(
-
-  params: Request, 
-
-
-) {
-
-  const id = params
-  const listings = getListingById(id as any)
-
-  return listings
-}
 
 export async function POST(
   request: Request, 

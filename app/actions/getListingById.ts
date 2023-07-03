@@ -39,8 +39,3 @@ export async function getListingById(
   }
 }
 
-export const listingById  = async  ({ params }: { params: IParams }) => {
-  const list = await getListingById(params)
-
-  return list
-}
