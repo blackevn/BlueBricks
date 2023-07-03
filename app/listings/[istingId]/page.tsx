@@ -13,7 +13,7 @@ interface IParams {
 const ListingPage = ({ params }: { params: IParams }) => {
 const path = usePathname()
 const listingId = path?.split("/")[2];
-const list = listingId ? listingById(listingId as any) : null;
+const list = listingById(listingId as any) 
 
 console.log(list);
 
