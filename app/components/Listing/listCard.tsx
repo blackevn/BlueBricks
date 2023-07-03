@@ -1,7 +1,7 @@
 'use client'
 
-import { IUser, Listing,  } from "@/types/interfaces";
-import { Reservation, User} from "@prisma/client";
+import { IUser  } from "@/types/interfaces";
+import { Reservation, Listing} from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useCountries, useFavourite, useToggle } from "../../hooks";
 import React, { useCallback, useMemo } from "react";

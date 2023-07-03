@@ -3,14 +3,10 @@ import { ListCard } from "./components";
 import { ListLoading } from "./components/Loading";
 import { useEffect, useState } from "react";
 import  { getCurrentUser, getListings } from "./actions";
-import  { IListingsParams } from "./actions/getListings";
 import { NextPage } from "next";
  
-interface HomeProps {
-  searchParams: IListingsParams
-};
 
-const page: NextPage<HomeProps> = async ({searchParams}) => {
+const page: NextPage = async () => {
 
   const listings = await getListings()
   const currentUser = await getCurrentUser()
