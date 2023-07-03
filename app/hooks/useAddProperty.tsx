@@ -27,12 +27,14 @@ const useAddProperty = () => {
       category: '',
       location: undefined,
       guestCount: 1,
-      roomCount: 1  ,
+      roomCount: 1,
       bathroomCount: 1,
       imageSrc: '',
       price: 1,
       title: '',
       description: '',
+      id: "",
+      locationValue: ""
     }
     
     const router = useRouter()
