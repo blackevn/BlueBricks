@@ -38,3 +38,9 @@ export async function getListingById(
     throw new Error(error);
   }
 }
+
+export const listingById  = async  (params: IParams ) => {
+  const list = await getListingById(params)
+
+  return list
+}
