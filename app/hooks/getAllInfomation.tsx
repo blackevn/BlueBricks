@@ -1,6 +1,6 @@
 
 const getAllInfomation = () => {
-    const 
+
   return <div>getAllInfomation</div>;
 };
 
