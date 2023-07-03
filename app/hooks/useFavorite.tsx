@@ -48,7 +48,7 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
         ))
     } catch (error) {
       toast.custom(() => (
-        <Toast text="Something went wrong" modifier="bg-green-500 text-white" icon={FaExclamationTriangle}/>
+        <Toast text="Something went wrong" modifier="bg-orange-500 text-white" icon={FaExclamationTriangle}/>
         ))
     }
   }, 
