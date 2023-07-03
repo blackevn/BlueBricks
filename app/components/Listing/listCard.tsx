@@ -33,7 +33,7 @@ const ListCard: React.FC<ListingProps> = ({
                                           actionLabel,
                                           }) => {
 
-const listingId = listing.id
+const listingId = listing?.id
 const router = useRouter()
 const { getByValue } = useCountries()
 const location = getByValue(listing?.locationValue)
