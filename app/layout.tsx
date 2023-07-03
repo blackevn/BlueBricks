@@ -6,7 +6,7 @@ import { getCurrentUser } from './actions'
 import { User } from '@prisma/client'
 import { Suspense } from 'react'
 
-const inter = Montserrat({ subsets: ['latin'] })
+// const inter = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Blue Bricks',
@@ -28,7 +28,7 @@ export default async function RootLayout({
   return (
     
     <html lang="en">
-            <body className={`${inter.className} box-border`}>
+            <body className={`box-border`}>
           <ToasterWrap/> 
               <Nav currentUser={currentUser}/>
             <Suspense fallback={<SearchBarFallback />}>

@@ -1,10 +1,15 @@
 
 import { getCurrentUser, getListingById, getReservations } from "@/app/actions";
-import useCurrentUrl from "@/app/hooks/useCurrentUrl";
 
-const ListingPage = async () => {
 
-  const currentUrl = useCurrentUrl();
+interface IParams {
+  listingId?: string
+}
+
+const ListingPage = async ({ params }: {params: IParams}) => {
+
+const listingId = await getListingById(params)
+  
 
   return (
     <></>
