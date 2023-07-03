@@ -5,9 +5,12 @@ interface IParams {
 }
 
 const ListingPage = async ({params}: {params: IParams}) => {
-  const listing = await getListingById(params)
+  
+  console.log(params);
+  
+
   return <>
-          <div>{listing?.title}</div>
+         
         </>
 };
 
