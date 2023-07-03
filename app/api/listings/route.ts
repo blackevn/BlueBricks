@@ -9,8 +9,9 @@ interface IParams {
   listingId?: string;
 }
 export async function GET(
-  
-  params: IParams
+
+  params: Request, 
+
 
 ) {
 
