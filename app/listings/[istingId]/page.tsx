@@ -1,33 +1,43 @@
-
+'use client'
 import { getCurrentUser, getListingById, getReservations } from "@/app/actions";
-import { GetServerSideProps } from "next";
+import { useRouter, usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
 
 
 interface IParams {
-  listingId?: string
+  listingId: string
 }
 
-const ListingPage = async ({ params }: {params: IParams}) => {
 
-const listingId = await getListingById(params)
+
+const ListingPage = ({ params }: {params: IParams}) => {
+
+  const pathname = usePathname()
+
+  const id = pathname
+
+  let oneListing = null
+
+  useEffect(() => {
+    const getListings = async () => {
+   
+    const listingId = await getListingById(params)
+
+    oneListing = listingId
+    }
+  }, [oneListing])
+
+
   
-console.log(params);
+console.log(oneListing);
+console.log(id);
 
 
   return (
     <></>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { params } = context;
-
-  return {
-    props: {
-      params: params || ''
-    }
-  };
-};
 
  
 export default ListingPage;
