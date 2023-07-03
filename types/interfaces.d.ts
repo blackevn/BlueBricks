@@ -157,3 +157,8 @@ export interface ContextData {
 
 
 
+  export type SafeListing = Omit<Listing, "id" | 'locationValue'> & {
+    id?: string;
+    locationValue?: string
+    
+  };
