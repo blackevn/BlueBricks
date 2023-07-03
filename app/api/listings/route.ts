@@ -2,6 +2,19 @@ import { NextResponse } from "next/server";
 
 import prisma from "@/libs/prismadb";
 import getCurrentUser from "@/app/actions/getCurrentUser";
+import { getListingById } from "@/app/actions";
+
+
+export async function GET(
+  respond: NextResponse, 
+
+) {
+
+  const id = respond
+  const listings = getListingById(id as any)
+
+  return listings
+}
 
 export async function POST(
   request: Request, 
