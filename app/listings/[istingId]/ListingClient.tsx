@@ -3,15 +3,20 @@
 import { useParams, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-let params: any = []
+let params: string[] = [];
 
-export const updatedParams = params?.filter((param: any) => param?.replace(/\/listings\//, '/listings/'));
+export const updatedParams: string[] = params.map((param: string) => {
+  const matchResult = param.match(/\/listings\/(.+)/)?.[1];
+  return matchResult || ""; // return an empty string if no match is found
+});
 
 const ListingClient = () => {
     
     const listingParams = usePathname()
     
-    params.push(listingParams)
+    if (listingParams !== null) {
+        params.push(listingParams);
+      }
     useEffect(() => {
         if ( params ) {
             setTimeout(() => {
