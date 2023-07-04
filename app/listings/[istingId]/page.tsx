@@ -1,21 +1,22 @@
-import { getCurrentUser, getListingById, getReservations } from "@/app/actions";
+import { getCurrentUser, getListingById, getListings, getReservations } from "@/app/actions";
 import { NextPage } from "next";
+import ListingClient, { params } from "./ListingClient";
 
 interface IParams {
-  listingId: string
+  params: string
 }
 
-const ListingPage = async ({ params }: {params: IParams}) => {
-console.log(params);
+const ListingPage = async () => {
 
-  // const listing = await getListingById(params);
-  // const reservations = await getReservations(params);
-  // const currentUser = await getCurrentUser();
+  console.log(params);
+  
 
+  const listings = await getListings()
+  const currentUser = await getCurrentUser()
   return (
     <>
     <div>
-      Listing
+      <ListingClient />
     </div>
     </>
   );
