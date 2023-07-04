@@ -8,7 +8,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 interface QueryParams {
-  listingId?: string;
+  params?: string;
 }
 
 app.prepare().then(() => {
@@ -17,9 +17,9 @@ app.prepare().then(() => {
     const { pathname, query } = parsedUrl;
 
     // Extract the desired URL parameters from the query object
-    const { listingId } = query as QueryParams;
+    const { params } = query as QueryParams;
 
-    if (pathname?.startsWith('/listing/') && listingId) {
+    if (pathname?.startsWith('/listing/') && params) {
       // Render the page component with the dynamic URL
       app.render(req, res, pathname, query);
     } else {
