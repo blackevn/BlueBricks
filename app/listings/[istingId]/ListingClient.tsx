@@ -3,7 +3,7 @@
 import { useParams, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-export let params: any = [].toString() 
+export let params: any = []
 
 const ListingClient = () => {
     

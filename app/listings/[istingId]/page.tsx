@@ -10,7 +10,7 @@ interface IParams {
 
 const ListingPage = async () => {
 
-console.log(params);
+console.log(params.toString() );
 
 
   
