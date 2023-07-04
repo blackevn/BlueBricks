@@ -5,14 +5,13 @@ import { useEffect } from "react";
 
 export let params: any = [] 
 
-
-
 const ListingClient = () => {
     
     const listingParams = usePathname()
     
-    params.push(listingParams)
     useEffect(() => {
+        params.push(listingParams)
+        
         if ( params ) {
             setTimeout(() => {
                 params = []
