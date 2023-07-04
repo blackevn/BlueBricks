@@ -2,7 +2,13 @@
 
 import { useParams, usePathname } from "next/navigation";
 
-export const params: any = []
+export let params: any = []
+
+if ( params ) {
+    setTimeout(() => {
+        params = []
+    }, 1000)
+}
 
 const ListingClient = () => {
 
