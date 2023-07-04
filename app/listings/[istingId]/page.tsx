@@ -8,7 +8,7 @@ interface IParams {
 
 const ListingPage = async () => {
 
-  const updatedParams = params.map((param: any) => param.replace(/\/listings\//, '/listings/'));
+  const updatedParams = params?.map((param: any) => param?.replace(/\/listings\//, '/listings/'));
 
 console.log(updatedParams);
 
