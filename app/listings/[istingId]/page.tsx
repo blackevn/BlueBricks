@@ -1,16 +1,15 @@
 import { getCurrentUser, getListingById, getListings, getReservations } from "@/app/actions";
 import { NextPage } from "next";
-import ListingClient, { params } from "./ListingClient";
+import ListingClient, { updatedParams } from "./ListingClient";
 
 interface IParams {
-  params: string
+  params?: string
 }
 
 const ListingPage = async () => {
 
-  const updatedParams = params?.map((param: any) => param?.replace(/\/listings\//, '/listings/'));
-
 console.log(updatedParams);
+
 
   
   // const listings = await getListingById(updatedParams)

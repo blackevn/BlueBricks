@@ -3,7 +3,11 @@
 import { useParams, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-export let params: any = []
+let params: any = []
+
+export const updatedParams = params?.map((param: any) => param?.replace(/\/listings\//, '/listings/'));
+
+console.log(updatedParams);
 
 const ListingClient = () => {
     
