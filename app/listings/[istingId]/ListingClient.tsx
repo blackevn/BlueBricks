@@ -5,9 +5,7 @@ import { useEffect } from "react";
 
 let params: any = []
 
-export const updatedParams = params?.map((param: any) => param?.replace(/\/listings\//, '/listings/'));
-
-console.log(updatedParams);
+export const updatedParams = params?.filter((param: any) => param?.replace(/\/listings\//, '/listings/'));
 
 const ListingClient = () => {
     
