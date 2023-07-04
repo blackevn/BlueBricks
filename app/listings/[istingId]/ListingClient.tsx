@@ -6,7 +6,7 @@ let params: any = null
 
 const ListingClient = () => {
 
- params = usePathname()?.toString
+ params = usePathname()
 
     console.log();
     
