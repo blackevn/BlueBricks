@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export let params: any = []
 
-console.log(params[0].toString());
+console.log(params[0]?.toString());
 
 
 const ListingClient = () => {
@@ -25,7 +25,7 @@ const ListingClient = () => {
     }, [params])
   
 
-    return <div>{JSON.stringify(params[0])}</div>;
+    return <div>ListingID</div>;
 };
 
 export default ListingClient;
