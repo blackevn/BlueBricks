@@ -3,9 +3,7 @@
 import { useParams, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-export let params: any = []
 
-console.log(params);
 
 const ListingClient = () => {
     
@@ -20,11 +18,13 @@ const ListingClient = () => {
                 params = []
             }, 5000)
         }
-       
+        
     }, [params])
-  
-
+    
+    
     return <div>{JSON.stringify(params)}</div>;
 };
 
+export let params: any = []
+console.log(params);
 export default ListingClient;
