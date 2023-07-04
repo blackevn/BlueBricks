@@ -1,21 +1,24 @@
 'use client'
 
 import { useParams, usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export let params: any = []
 
-if ( params ) {
-    setTimeout(() => {
-        params = []
-    }, 1000)
-}
-
 const ListingClient = () => {
-
- const listingParams = usePathname()
-
- params.push(listingParams)
     
+    const listingParams = usePathname()
+    
+    params.push(listingParams)
+    useEffect(() => {
+        if ( params ) {
+            setTimeout(() => {
+                params = []
+            }, 1000)
+        }
+       
+    }, [params])
+  
 
     return <div>ListingClient</div>;
 };
