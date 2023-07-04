@@ -7,7 +7,6 @@ export let params: any = []
 
 console.log(params);
 
-
 const ListingClient = () => {
     
     const listingParams = usePathname()
@@ -19,13 +18,13 @@ const ListingClient = () => {
         if ( params ) {
             setTimeout(() => {
                 params = []
-            }, 1000)
+            }, 5000)
         }
        
     }, [params])
   
 
-    return <div>ListingID</div>;
+    return <div>{JSON.stringify(params)}</div>;
 };
 
 export default ListingClient;
