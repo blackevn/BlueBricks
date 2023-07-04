@@ -2,13 +2,13 @@
 
 import { useParams, usePathname } from "next/navigation";
 
-let params: any = null
+let params: any = ''
 
 const ListingClient = () => {
 
  params = usePathname()
 
-    console.log();
+    console.log(params);
     
 
     return <div>ListingClient</div>;
