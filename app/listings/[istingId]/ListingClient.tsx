@@ -5,6 +5,9 @@ import { useEffect } from "react";
 
 export let params: any = []
 
+console.log(params);
+
+
 const ListingClient = () => {
     
     const listingParams = usePathname()

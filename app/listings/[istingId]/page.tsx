@@ -1,5 +1,3 @@
-'use client'
-
 import { getCurrentUser, getListingById, getListings, getReservations } from "@/app/actions";
 import { NextPage } from "next";
 import ListingClient, { params } from "./ListingClient";
