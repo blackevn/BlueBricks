@@ -16,7 +16,7 @@ const ListingClient = () => {
         if ( params ) {
             setTimeout(() => {
                 params = []
-            }, 1000)
+            }, 2000)
         }
        
     }, [params])
