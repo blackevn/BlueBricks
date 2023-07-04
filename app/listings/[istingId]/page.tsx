@@ -4,8 +4,8 @@ interface IParams {
   listingId?: string
 }
 
-const ListingPage = ({ params }: { params: IParams }) => {
-console.log(params);
+const ListingPage = async ({ listingId }: { listingId: IParams }) => {
+console.log(listingId);
 
   // const listing = await getListingById(params);
   // const reservations = await getReservations(params);
