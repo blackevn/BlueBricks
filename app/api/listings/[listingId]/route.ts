@@ -44,6 +44,7 @@ export async function GET(
 
     const { listingId } = params;
 
+  
     const listing = await prisma.listing.findUnique({
       where: {
         id: listingId,

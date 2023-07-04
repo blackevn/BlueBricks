@@ -24,6 +24,7 @@ const ListingPage = () => {
   return (
     <>
     <div>
+    {JSON.stringify(params)}
       <ListingClient />
     </div>
     </>
