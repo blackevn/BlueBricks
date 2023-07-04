@@ -2,7 +2,7 @@
 
 import { getCurrentUser, getListingById, getListings, getReservations } from "@/app/actions";
 import { NextPage } from "next";
-import ListingClient, { updatedParams } from "./ListingClient";
+import ListingClient, { params } from "./ListingClient";
 
 interface IParams {
   params?: string
@@ -10,7 +10,7 @@ interface IParams {
 
 const ListingPage = async () => {
 
-console.log(updatedParams);
+console.log(params.toString());
 
 
   

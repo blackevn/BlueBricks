@@ -1,29 +1,28 @@
-import { usePathname } from "next/navigation";
+'use client'
+
+import { useParams, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-const params: string[] = [];
+export let params: any = [] 
+
+
 
 const ListingClient = () => {
-  const listingParams = usePathname();
+    
+    const listingParams = usePathname()
+    
+    params.push(listingParams)
+    useEffect(() => {
+        if ( params ) {
+            setTimeout(() => {
+                params = []
+            }, 1000)
+        }
+       
+    }, [params])
+  
 
-  if (listingParams !== null) {
-    params.push(listingParams);
-  }
-
-  useEffect(() => {
-    setTimeout(() => {
-      params.length = 0;
-    }, 2000);
-  }, [params]);
-
-  return <div>ListingClient</div>;
+    return <div>ListingClient</div>;
 };
 
-const updatedParams: string[] = params.map((param) => {
-  const matchResult = param.match(/\/listings\/(.+)/)?.[1];
-  return matchResult || ""; // return an empty string if no match is found
-});
-
-export { updatedParams };
 export default ListingClient;
-
