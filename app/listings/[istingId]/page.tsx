@@ -1,24 +1,25 @@
+"use client"
+
 import { getCurrentUser, getListingById, getListings, getReservations } from "@/app/actions";
 import { NextPage } from "next";
 import ListingClient, { params } from "./ListingClient";
+import { usePathname } from "next/navigation";
+import useListing from "@/app/hooks/useListing";
 
 interface IParams {
   params?: string
 }
 
-const ListingPage = async () => {
+const ListingPage = () => {
+  
+  const listingParams = usePathname();
 
-console.log(params);
+  const pathname = usePathname();
+  const listingId = pathname?.toString().replace(/^\/listings\//, "");
+  const { data: data } = useListing(listingId as string)
 
- if ( params ) {
+  console.log(data);
   
-   const currentUser = await getCurrentUser()
-   console.log(currentUser);
-   
-    }
-  
-  
-  // const listings = await getListingById(updatedParams)
   
   return (
     <>
