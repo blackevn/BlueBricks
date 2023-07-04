@@ -8,7 +8,7 @@ const ListingClient = () => {
 
  params = usePathname()
 
-    console.log(params);
+    // console.log(params);
     
 
     return <div>ListingClient</div>;
