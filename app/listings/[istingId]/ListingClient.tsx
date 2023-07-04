@@ -3,7 +3,7 @@
 import { useParams, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-export let params: any = [] 
+export let params: any = [].toString() 
 
 const ListingClient = () => {
     
@@ -11,7 +11,7 @@ const ListingClient = () => {
     
     useEffect(() => {
         params.push(listingParams)
-        
+
         if ( params ) {
             setTimeout(() => {
                 params = []
