@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export let params: any = []
 
-console.log(params[0]?.toString());
+console.log(params);
 
 
 const ListingClient = () => {
