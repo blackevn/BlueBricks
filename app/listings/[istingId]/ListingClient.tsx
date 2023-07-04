@@ -16,7 +16,7 @@ const ListingClient = () => {
         params.length = 0;
       }, 5000);
     }
-  }, [listingParams]);
+  }, [params]);
 
   return <div>{JSON.stringify(params)}</div>;
 };
