@@ -2,18 +2,16 @@
 
 import { useParams, usePathname } from "next/navigation";
 
-let params: any = ''
+export const params: any = []
 
 const ListingClient = () => {
 
- params = usePathname()
+ const listingParams = usePathname()
 
-    // console.log(params);
+ params.push(listingParams)
     
 
     return <div>ListingClient</div>;
 };
 
-export { params
-}
 export default ListingClient;
