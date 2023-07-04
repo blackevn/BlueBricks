@@ -10,12 +10,18 @@ interface IParams {
 
 const ListingPage = async () => {
 
-console.log(params.toString() );
+console.log(params);
 
-
+ if ( params ) {
+  
+   const currentUser = await getCurrentUser()
+   console.log(currentUser);
+   
+    }
+  
   
   // const listings = await getListingById(updatedParams)
-  // const currentUser = await getCurrentUser()
+  
   return (
     <>
     <div>
