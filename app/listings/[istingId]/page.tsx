@@ -20,7 +20,7 @@ const ListingPage = () => {
 
   useEffect(() => {
 
- if( listingId ){   fetch(`/api/listings/${listingId}`)
+ if( listingId ){   fetch(`/listings/${listingId}`)
     .then(res => res.json())
     .then(data => setAllListings(data))
     .catch(error => console.log(error)

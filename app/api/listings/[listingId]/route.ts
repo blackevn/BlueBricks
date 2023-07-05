@@ -35,13 +35,15 @@ export async function DELETE(
 }
 
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(
+  request: Request, 
+  { params }: { params: IParams }
+) {
 
   try {
 
-    const { listingId } = req.query;
-
-    
+    const { listingId } = params;
+  
     if (!listingId || typeof listingId !== 'string') {
       throw new Error('Invalid ID');
     }
