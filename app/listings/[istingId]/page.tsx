@@ -28,8 +28,8 @@ const ListingPage = () => {
     
  }, [listingId])
   
-  const { data: data } = useListing(listingId as string)
-  console.log(data);
+  // const { data: data } = useListing(listingId as string)
+  // console.log(data);
   console.log(allListings);
   
   

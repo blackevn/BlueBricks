@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { NextApiRequest, NextApiResponse } from "next";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import prisma from "@/libs/prismadb";
 
@@ -33,18 +34,18 @@ export async function DELETE(
   return NextResponse.json(listing);
 }
 
-import { NextApiRequest, NextApiResponse } from "next";
 
-export async function GET(
-  request: Request, 
-  { params }: { params: IParams }
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   try {
 
-    const { listingId } = params;
+    const { listingId } = req.query;
 
-  
+    
+    if (!listingId || typeof listingId !== 'string') {
+      throw new Error('Invalid ID');
+    }
+
     const listing = await prisma.listing.findUnique({
       where: {
         id: listingId,
