@@ -1,22 +1,29 @@
 'use client'
 
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 export let params: any[] = [];
 
 const ListingClient = () => {
   const listingParams = usePathname();
 
-  useEffect(() => {
-    params.push(listingParams);
+  const clearArr = useMemo(() => {
+    if(params.length > 0 )
+      params.unshift()
+  }, [params])
+  params.push(listingParams);
 
-    if (params.length > 0) {
-      setTimeout(() => {
-        params.length = 0;
-      }, 5000);
-    }
-  }, [listingParams]);
+  
+
+  // useEffect(() => {
+
+  //   if (params.length > 0) {
+  //     setTimeout(() => {
+  //       params.length = 0;
+  //     }, 5000);
+  //   }
+  // }, [listingParams]);
 
   return <div>{JSON.stringify(params)}</div>;
 };
