@@ -10,7 +10,7 @@ const ListingClient = () => {
 
   const clearArr = useMemo(() => {
     if(params.length > 0 )
-      params.unshift()
+      params.shift()
   }, [params])
   params.push(listingParams);
 
