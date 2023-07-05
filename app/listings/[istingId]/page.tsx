@@ -19,13 +19,15 @@ const ListingPage = () => {
     const listingId = pathname?.toString().replace(/^\/listings\//, "");
 
   useEffect(() => {
-    axios.get(`/api/listings/${listingId}`)
-    .then(res => setAllListings(res.data))
+
+ if( listingId ){   fetch(`/api/listings/${listingId}`)
+    .then(res => res.json())
+    .then(data => setAllListings(data))
     .catch(error => console.log(error)
-    )
-  }, [listingId])
+    )} return console.log('No ID');
+    
+ }, [listingId])
   
-  const listingParams = usePathname();
   const { data: data } = useListing(listingId as string)
   console.log(data);
   console.log(allListings);
