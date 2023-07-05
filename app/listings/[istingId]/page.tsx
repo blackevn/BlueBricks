@@ -2,25 +2,22 @@
 
 import { getCurrentUser, getListingById, getListings, getReservations } from "@/app/actions";
 import ListingClient from "./ListingClient";
-import { usePathname } from "next/navigation";
 import useListing from "@/app/hooks/useListing";
-import { useEffect, useState } from "react";
 interface IParams {
   params?: string
 }
 
-const ListingPage = () => {
+const ListingPage = async () => {
 
-    const pathname = usePathname();
-    const listingId = pathname?.toString().replace(/^\/listings\//, "");
+const listings = await getListings()
+
+    // const pathname = usePathname();
+    // const listingId = pathname?.toString().replace(/^\/listings\//, "");
   
-  const { data: data } = useListing(listingId as string)
-  console.log(data);
-
-  return (
+   return (
     <>
     <div>
-         <ListingClient />
+         <ListingClient listings={listings} />
     </div>
     </>
   );
